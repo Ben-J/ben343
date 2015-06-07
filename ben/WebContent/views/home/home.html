@@ -7,11 +7,11 @@
 		data-90p-start="padding:10px 0;"
 		style="padding: 17px 0px;"
 		src="img/web_site_img/logo_transparent_medium.png"
-		ng-click="goToAnchor('body')">
+		ng-click="goTop()">
 	</a>
 	<nav>
-		<span ng-repeat="m in menu"> <a ng-class="{{m.css}}"
-			ng-click="goToAnchor('{{m.id}}')">{{m.title}}</a>
+		<span ng-repeat="m in menu"> 
+		<a class="" ng-class="{{'m.css'}}" ng-click="goToAnchor({{m.id}})">{{m.title}}</a>
 		</span>
 	</nav>
 </div>
@@ -35,14 +35,14 @@
 	<div id="footer">
 		<div class="wrapper">
 			<div class="column1">
-				<a ng-click="goToAnchor('services')">SERVICES</a><br>
-				<a ng-click="goToAnchor('founders')">MEET THE FOUNDERS</a><br>
-				<a ng-click="goToAnchor('work')">WORK</a><br>
-				<a ng-click="goToAnchor('process')">PROCESS</a><br>
+				<a ng-click="goToAnchor(0)">SERVICES</a><br>
+				<a ng-click="goToAnchor(1)">MEET THE FOUNDERS</a><br>
+				<a ng-click="goToAnchor(2)">WORK</a><br>
+				<a ng-click="goToAnchor(3)">PROCESS</a><br>
 			</div>
 			<div class="column2">
-				<a ng-click="goToAnchor('faq')">FAQ</a><br>
-				<a ng-click="goToAnchor('contact')">CONTACT</a><br>
+				<a ng-click="goToAnchor(4)">FAQ</a><br>
+				<a ng-click="goToAnchor(5)">CONTACT</a><br>
 				<!--<a href="#blog">BLOG</a><br >-->
 			</div>
 			<div class="media">

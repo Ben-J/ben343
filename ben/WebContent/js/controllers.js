@@ -17,12 +17,12 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		/* MENU ->*/
 		$scope.menu = 
 		[
-		 {id: 0, title:'ACCUEIL', 		value:'services', 	css:'services'},
-		 {id: 1, title:'MOI',		 	value:'founders',	css:'founders'},
-		 {id: 2, title:'SCOLAIRE', 		value:'process', 	css:'process'},
-		 {id: 3, title:'PROFESSIONNAL',	value:'work',  		css:'work'},
-		 {id: 4, title:'FAQ', 			value:'faq', 		css:'faq'},
-		 {id: 5, title:'CONTACT', 		value:'contact',  	css:'contact'}
+		 {id: 0, title:'ACCUEIL', 		value:'services', 	css:'', 	active:''},
+		 {id: 1, title:'MOI',		 	value:'founders',	css:'', 	active:''},
+		 {id: 2, title:'SCOLAIRE', 		value:'process', 	css:'',  	active:''},
+		 {id: 3, title:'PROFESSIONNAL',	value:'work',  		css:'',  		active:''},
+		 {id: 4, title:'FAQ', 			value:'faq', 		css:'',  		active:''},
+		 {id: 5, title:'CONTACT', 		value:'contact',  	css:'',  	active:''}
 		 ];
 		
 		$scope.goToAnchor = function(x) {
@@ -32,35 +32,77 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		    
 			angular.forEach($scope.menu, function(row) {
 				if(row.id == x) {
-					row.css = row.value + ' active';
+					row.css = 'active';
 				} else {
-					row.css = row.value;
+					row.css = '';
 				}
 			});
 		};
+		
+		$scope.goTop = function() {
+			$location.hash('body');
+		    anchorSmoothScroll.scrollTo('body');
+		    angular.forEach($scope.menu, function(row) {
+				row.css = '';
+			});
+		};
 		/*<- MENU */
+		
+		/* TITLE ->*/
+		$scope.title = {
+			name: 'Benjamin Brion',
+			job: 'Ingénieur Logiciel',
+			accroche: 'Front-end Back-end'
+		};
+		
+		/*<- TITLE */
 		
 		/* ACCUEIL ->*/
 		$scope.services = [
 		                   {
 		                	   id: 0,
+		                	   link: function() {
+		                		   	$location.hash('process');
+		               		    	anchorSmoothScroll.scrollTo('process');
+		               		    	angular.forEach($scope.menu, function(row) {
+		               					if(row.id == 2) {
+		               						row.css = 'active';
+		               					} else {
+		               						row.css = '';
+		               					}
+		               				});
+		                	   },
 		                	   title: 'Scolaire',
 		                	   src: 'img/web_site_img/wireframing.png',
-		                	   text:'Cliquez ici pour découvrir dans les grandes lignes mon parcours scolaire.',
+		                	   text:'Si vous voulez en savoir un peu plus sur mon parcours scolaire... recliquer ici.',
 		                	   active: false
 		                   },
 		                   {
-		                	   id: 1, 
+		                	   id: 1,
+		                	   link: function() {
+		                			$location.hash('work');
+		               		    	anchorSmoothScroll.scrollTo('work');
+		               		    	angular.forEach($scope.menu, function(row) {
+		               					if(row.id == 3) {
+		               						row.css = 'active';
+		               					} else {
+		               						row.css = '';
+		               					}
+		               				});
+		                	   },
 		                	   title: 'Professionnel',
 		                	   src: 'img/web_site_img/app_development.png',
-		                	   text:'Cliquez ici pour découvrir dans les grandes lignes mon parcours professionnel.',
+		                	   text:'Pour découvrir dans les grandes lignes mon parcours professionnel, recliquer ici',
 		                	   active:false
 		                   },
 		                   {
 		                	   id: 2,
+		                	   link: function() {
+		                		   $location.path('/resume');
+		                	   },
 		                	   title: 'Loisir',
 		                	   src: 'img/web_site_img/graphic_design.png',
-		                	   text:'Cliquez ici pour découvrir dans les grandes lignes mes loisirs.',
+		                	   text:'Si connaître mes loisirs t\'intéresse alors il faut recliquer ici.',
 		                	   active:false
 		                   }
 		                  ];
@@ -73,7 +115,11 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		};
 		
 		$scope.setActive = function(val) {
-			$scope.services[val].active = !$scope.services[val].active;
+			if(!$scope.services[val].active) {
+				$scope.services[val].active = !$scope.services[val].active;
+			} else {
+				$scope.services[val].link();
+			}
 		};
 		
 		$scope.keys = ['Jeune', 'Développeur', 'Réunionnais', 'IT','Motard', 'JAVA', 'Voyage', 'Foot'];
@@ -188,8 +234,9 @@ benJControllers.controller('CvCtrl', ['$scope', '$log',
 benJControllers.controller('ResumeCtrl', ['$scope', '$log', '$state',
   	function($scope, $log, $state) {
 		skrollr.init({
-			smoothScrolling: false,
-			mobileDeceleration: 0.004
+			constants: {
+				box: '150p'
+			}
 		});
 		$scope.friend=" et les amis";
 		$scope.goToMenu = function() {
