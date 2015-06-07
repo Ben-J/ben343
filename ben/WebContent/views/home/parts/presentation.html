@@ -1,0 +1,58 @@
+<div id="services" class="slide" skrollr>
+	<h1 class="title">Présentation</h1>
+	<div class="icons">
+		<div class="one icon skrollable skrollable-after"
+			ng-class="{active:isActive(services[0].id)}"
+			hm-tap="setActive(services[0].id)"
+			data-300-center-top="opacity[swing]:0;transform[swing]:translate3d(0px, 170px, 0)"
+			data-200-center-top="opacity[swing]:1;transform[swing]:translate3d(0px, 0px, 0)"
+			style="opacity: 1; -webkit-transform: translate3d(0px, 0px, 0px); transform: translate3d(0px, 0px, 0px); touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+			<h4>{{services[0].title}}</h4>
+			<img ng-src="{{services[0].src}}">
+			<div class="extra">
+				<p>{{services[0].text}}</p>
+			</div>
+		</div>
+
+		<div class="two icon skrollable skrollable-before"
+			ng-class="{active:isActive(services[1].id)}"
+			hm-tap="setActive(services[1].id)"
+			data-200-center-top="opacity[swing]:0;transform[swing]:translate3d(0px, 170px, 0)"
+			data-100-center-top="opacity[swing]:1;transform[swing]:translate3d(0px, 0px, 0)"
+			style="opacity: 0; -webkit-transform: translate3d(0px, 170px, 0px); transform: translate3d(0px, 170px, 0px); touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+			<h4>{{services[1].title}}</h4>
+			<img ng-src="{{services[1].src}}">
+			<div class="extra">
+				<p>{{services[1].text}}</p>
+			</div>
+		</div>
+
+		<div class="three icon skrollable skrollable-before"
+			ng-class="{active:isActive(services[2].id)}"
+			hm-tap="setActive(services[2].id)"
+			data-100-center-top="opacity[swing]:0;transform[swing]:translate3d(0px, 170px, 0)"
+			data-center-top="opacity[swing]:1;transform[swing]:translate3d(0px, 0px, 0)"
+			style="opacity: 0; -webkit-transform: translate3d(0px, 170px, 0px); transform: translate3d(0px, 170px, 0px); touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+			<h4>{{services[2].title}}</h4>
+			<img ng-src="{{services[2].src}}">
+			<div class="extra">
+				<p>{{services[2].text}}</p>
+			</div>
+		</div>
+	</div>
+	<!-- /.icons -->
+
+	<div class="clearfix"></div>
+
+	<div class="description skrollable skrollable-before"
+		data--100-bottom-top="opacity[swing]:0"
+		data-50-bottom-bottom="opacity[swing]:1" style="opacity: 0;">
+		<h5>
+			{{citation.text}}<em>{{citation.author}}</em>
+		</h5>
+		<h6>
+			<span ng-repeat="k in keys">{{k}}<i class="fa fa-circle"></i></span>
+		</h6>
+	</div>
+
+</div>

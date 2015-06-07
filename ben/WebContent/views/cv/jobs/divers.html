@@ -1,0 +1,60 @@
+<div class="container-fluid" resize>
+	<div class="col-xs-12">
+		<div class="hidden-xs col-sm-3 pull-right">
+			<img ng-src="{{alzheimer.alzheimerImg.url}}" class="col-xs-12 col-sm-12 img-alzheimer">
+		</div>
+		<div class="col-xs-offset-3 col-xs-6 hidden-sm hidden-md hidden-lg">
+			<img ng-src="{{alzheimer.alzheimerImg.url}}" class="col-xs-12 col-sm-12 img-alzheimer">
+		</div>
+		<div class="col-xs-12 col-sm-9">
+			<h2>{{alzheimer.title}}</h2>
+		</div>
+	</div>
+	<div class="col-xs-12">
+		<blockquote>
+					<p>{{alzheimer.subTitle}}</p>
+		</blockquote>
+	</div>
+	<div class="hidden-xs col-sm-12" ng-show="windowHeight>510">
+		<em class="hidden-xs col-sm-12">{{alzheimer.projectDate}}</em>
+		<div class="hidden-xs col-sm-5 text-justify">
+			<p>{{alzheimer.projectInfo}}</p>
+		</div>
+		<div class="hidden-xs col-sm-7 margin-topm30">
+			<ul class="col-xs-offset-1" ng-repeat="pt in alzheimer.projectTasks">
+				<li><strong>{{pt}}</strong></li>
+			</ul>
+		</div>
+	</div>
+	<div class="col-xs-12">
+		<p>
+			<strong>{{alzheimer.keywordTitle}} </strong>{{alzheimer.projectKeyword}}
+		</p>
+	</div>
+</div>
+<div class="container-fluid" resize>
+	<div class="col-xs-12">
+		<div class="col-xs-offset-4 col-xs-4 col-sm-offset-0 col-sm-2">
+			<img ng-src="{{demeco.demecoImg.url}}" class="col-xs-12 col-sm-12 img-alzheimer">
+		</div>
+		<div class="col-xs-12 col-sm-10">
+			<h2>{{demeco.title}}</h2>
+		</div>
+	</div>
+	<div class="col-xs-12">
+		<blockquote>
+					<p>{{demeco.subTitle}}</p>
+		</blockquote>
+	</div>
+	<div class="hidden-xs col-sm-12" ng-show="windowHeight>510">
+		<em class="hidden-xs col-sm-12">{{demeco.projectDate}}</em>
+		<div class="hidden-xs col-sm-12 text-justify">
+			<p>{{demeco.projectInfo}}</p>
+		</div>
+	</div>
+	<div class="col-xs-12">
+		<p>
+			<strong>{{demeco.keywordTitle}} </strong>{{demeco.projectKeyword}}
+		</p>
+	</div>
+</div>

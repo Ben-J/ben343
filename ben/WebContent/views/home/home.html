@@ -1,0 +1,60 @@
+<div id="header" data-30p="height:90px;"
+	data-90p="height:45px; background-color:rgba(0,0,0,0);"
+	data-95p="background-color:rgba(0,0,0,1);">
+	<a class="logo"> 
+		<img class="skrollable skrollable-before"
+		data-30p="padding:17px 0;"
+		data-90p-start="padding:10px 0;"
+		style="padding: 17px 0px;"
+		src="img/web_site_img/logo_transparent_medium.png"
+		ng-click="goToAnchor('body')">
+	</a>
+	<nav>
+		<span ng-repeat="m in menu"> <a ng-class="{{m.css}}"
+			ng-click="goToAnchor('{{m.id}}')">{{m.title}}</a>
+		</span>
+	</nav>
+</div>
+
+<div id="body" skrollr>
+
+	<div ng-include src="'views/home/parts/title.html'"></div>
+
+	<div ng-include src="'views/home/parts/presentation.html'"></div>
+
+	<div ng-include src="'views/home/parts/divers.html'"></div>
+
+	<div ng-include src="'views/home/parts/university.html'"></div>
+
+	<div ng-include src="'views/home/parts/professionnal.html'"></div>
+
+	<div ng-include src="'views/home/parts/faq.html'"></div>
+
+	<div ng-include src="'views/home/parts/contact.html'"></div>
+
+	<div id="footer">
+		<div class="wrapper">
+			<div class="column1">
+				<a ng-click="goToAnchor('services')">SERVICES</a><br>
+				<a ng-click="goToAnchor('founders')">MEET THE FOUNDERS</a><br>
+				<a ng-click="goToAnchor('work')">WORK</a><br>
+				<a ng-click="goToAnchor('process')">PROCESS</a><br>
+			</div>
+			<div class="column2">
+				<a ng-click="goToAnchor('faq')">FAQ</a><br>
+				<a ng-click="goToAnchor('contact')">CONTACT</a><br>
+				<!--<a href="#blog">BLOG</a><br >-->
+			</div>
+			<div class="media">
+				<a class="fa fa-github" href="http://www.github.com/BenJ-343" target="blank"></a>
+				<a class="fa fa-linkedin" href="https://www.linkedin.com/company/BenjaminBrion" target="blank"></a>
+			</div>
+		</div>
+		<p class="copyright">
+			Ben343 © 2015 &nbsp; | &nbsp; <a href="mailto:bubblespirit343@gmail.com">benjamin@ben343.fr</a>
+		</p>
+
+	</div>
+	<!-- /#footer -->
+</div>
+

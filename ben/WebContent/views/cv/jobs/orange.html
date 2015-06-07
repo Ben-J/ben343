@@ -1,0 +1,31 @@
+<div class="container-fluid color-grey-lighter" resize>
+	<div class="col-xs-12">
+		<div class="col-xs-offset-4 col-xs-4 col-sm-offset-0 col-sm-2">
+			<img ng-src="{{orange.orangeImg.url}}" class="img-orange col-xs-12 col-sm-12">
+		</div>
+		<div class="col-xs-12 col-sm-9">
+			<h2>{{orange.title}}</h2>
+			<blockquote>
+				<p class="font-size-14">{{orange.subTitle}}</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-12">
+		<em class="col-xs-12 col-sm-12" >{{orange.projectDate}}</em>
+		<div class="col-xs-12 col-sm-12">
+			<div class="hidden-xs col-sm-8 text-justify" 
+				 ng-class="{'font-size-11': windowWidth<=890 ,'font-size-12': windowWidth>890}" >
+				<p>{{orange.projectInfo}}</p>
+			</div>
+			<div class="hidden-xs col-sm-4" ng-class="{'font-size-12': windowWidth<=890 ,'font-size-14': windowWidth>890}">
+				<ul ng-repeat="pt in orange.projectTasks">
+					<li><strong>{{pt}}</strong></li>
+				</ul>
+				<br>
+				<p>
+					<strong>{{orange.keywordTitle}} </strong>{{orange.projectKeyword}}
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
