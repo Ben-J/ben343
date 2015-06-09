@@ -42,14 +42,24 @@
 	<script src="bower_components/angular-snap/angular-snap.min.js"></script>
 	<script src="lib/truncate/truncate.js"></script>
 	<script src="lib/lazy/lazy.js"></script>
-
+	<script src="bower_components/angular-inview/angular-inview.js"></script>
 	<script	src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
-	<script src="bower_components/skrollr/dist/skrollr.min.js"></script>
 	<script src="js/services.js"></script>
-	<script src="js/controllers.js"></script>
 	<script src="js/directives.js"></script>
+	<script src="js/controllers.js"></script>
 	<script src="js/app.js"></script>
-	
+	<script src="bower_components/skrollr/dist/skrollr.min.js"></script>
+
+	<script type="text/javascript">
+	skrollr.init({
+		forceHeight: false,
+		easing: {
+			vibrate: function(p) {
+				return Math.sin(p * 10 * Math.PI);
+			}
+		}
+	});
+	</script>
 </body>
 
 </html>

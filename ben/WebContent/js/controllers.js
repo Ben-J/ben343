@@ -13,16 +13,17 @@ benJControllers.controller('GlobalCtrl', ['$scope', '$log',
 
 benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '$animate', '$state', 
                                         '$location', '$anchorScroll', 'anchorSmoothScroll', '$filter',
-    function($scope, $http, $timeout, $log, $animate, $state, $location, $anchorScroll, anchorSmoothScroll, $filter) {
+    function($scope, $http, $timeout, $log, $animate, $state, $location, $anchorScroll, 
+    		anchorSmoothScroll, $filter) {
 		/* MENU ->*/
 		$scope.menu = 
 		[
-		 {id: 0, title:'ACCUEIL', 		value:'services', 	css:'', 	active:''},
-		 {id: 1, title:'MOI',		 	value:'founders',	css:'', 	active:''},
-		 {id: 2, title:'SCOLAIRE', 		value:'process', 	css:'',  	active:''},
-		 {id: 3, title:'PROFESSIONNAL',	value:'work',  		css:'',  		active:''},
-		 {id: 4, title:'FAQ', 			value:'faq', 		css:'',  		active:''},
-		 {id: 5, title:'CONTACT', 		value:'contact',  	css:'',  	active:''}
+		 {id: 0, title:'ACCUEIL', 		value:'services', 	css:''},
+		 {id: 1, title:'MOI',		 	value:'founders',	css:''},
+		 {id: 2, title:'SCOLAIRE', 		value:'process', 	css:''},
+		 {id: 3, title:'PROFESSIONNAL',	value:'work',  		css:''},
+		 {id: 4, title:'FAQ', 			value:'faq', 		css:''},
+		 {id: 5, title:'CONTACT', 		value:'contact',  	css:''}
 		 ];
 		
 		$scope.goToAnchor = function(x) {
@@ -40,10 +41,20 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		};
 		
 		$scope.goTop = function() {
-			$location.hash('body');
-		    anchorSmoothScroll.scrollTo('body');
+			$location.hash('hero');
+		    anchorSmoothScroll.scrollTo('hero');
 		    angular.forEach($scope.menu, function(row) {
 				row.css = '';
+			});
+		};
+		
+		$scope.setActiveMenu = function(name) {
+			angular.forEach($scope.menu, function(row) {
+				if(row.value == name) {
+					row.css = 'active';
+				} else {
+					row.css = '';
+				}
 			});
 		};
 		/*<- MENU */
@@ -52,7 +63,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		$scope.title = {
 			name: 'Benjamin Brion',
 			job: 'Ingénieur Logiciel',
-			accroche: 'Front-end Back-end'
+			accroche: 'réparties ou critiques'
 		};
 		
 		/*<- TITLE */
@@ -123,6 +134,10 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		};
 		
 		$scope.keys = ['Jeune', 'Développeur', 'Réunionnais', 'IT','Motard', 'JAVA', 'Voyage', 'Foot'];
+		
+		$scope.test = function() {
+			console.log('test');
+		};
 		/*<- ACCUEIL */
 		
 		/* UNIVERSITY ->*/
@@ -238,7 +253,6 @@ benJControllers.controller('ResumeCtrl', ['$scope', '$log', '$state',
 				box: '150p'
 			}
 		});
-		$scope.friend=" et les amis";
 		$scope.goToMenu = function() {
 			$state.go("benJ", {}, {reload: true});
 		};
