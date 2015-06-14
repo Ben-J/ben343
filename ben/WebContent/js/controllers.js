@@ -21,7 +21,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		 {id: 0, menuTitle:'Accueil', 		title:'Présentation', 		value:'services', 	css:''},
 		 {id: 1, menuTitle:'Loisir',		title:'Loisir',		 		value:'founders',	css:''},
 		 {id: 2, menuTitle:'Carrière', 		title:'Ma Carrière', 		value:'process', 	css:''},
-		 {id: 3, menuTitle:'Projets',		title:'Quelques Projets',	value:'work',  		css:''},
+		 {id: 3, menuTitle:'Projets',		title:'Projets',	value:'work',  		css:''},
 		 {id: 4, menuTitle:'FAQ', 			title:'FAQ', 				value:'faq', 		css:''},
 		 {id: 5, menuTitle:'Contact', 		title:'Contact', 			value:'contact',  	css:''}
 		 ];
@@ -66,60 +66,61 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		$scope.title = {
 			name: 'Benjamin Brion',
 			job: 'Ingénieur Logiciel',
-			accroche: '24 ans de créativité'
+			accroche: '26 ans de créativité'
 		};
 		
 		/*<- MOI */
 		
 		/* ACCUEIL ->*/
-		$scope.plans = [
-		                   {
-		                	   id: 0,
-		                	   link: function() {
-		                		   	$location.hash('process');
-		               		    	anchorSmoothScroll.scrollTo('process');
-		               		    	angular.forEach($scope.menu, function(row) {
-		               					if(row.id == 2) {
-		               						row.css = 'active';
-		               					} else {
-		               						row.css = '';
-		               					}
-		               				});
-		                	   },
-		                	   title: 'Carrière',
-		                	   src: 'img/web_site_img/wireframing.png',
-		                	   text:'Si vous voulez en connaitre un peu plus sur mon parcours scolaire et professionnel... recliquer ici.',
-		                	   active: false
-		                   },
-		                   {
-		                	   id: 1,
-		                	   link: function() {
-		                			$location.hash('work');
-		               		    	anchorSmoothScroll.scrollTo('work');
-		               		    	angular.forEach($scope.menu, function(row) {
-		               					if(row.id == 3) {
-		               						row.css = 'active';
-		               					} else {
-		               						row.css = '';
-		               					}
-		               				});
-		                	   },
-		                	   title: 'Projets',
-		                	   src: 'img/web_site_img/app_development.png',
-		                	   text:'Pour découvrir quelques projets grandement menés au cours de ma petite vie recliquer ici',
-		                	   active:false
-		                   },
-		                   {
-		                	   id: 2,
-		                	   link: function() {
-		                		   $location.path('/resume');
-		                	   },
-		                	   title: 'Loisir',
-		                	   src: 'img/web_site_img/graphic_design.png',
-		                	   text:'Si connaître mes loisirs t\'intéresse alors il faut recliquer ici.',
-		                	   active:false
-		                   }
-		                  ];
+		$scope.plans = 
+		  [
+	       {
+	    	   id: 0,
+	    	   link: function() {
+	    		   	$location.hash('process');
+	   		    	anchorSmoothScroll.scrollTo('process');
+	   		    	angular.forEach($scope.menu, function(row) {
+	   					if(row.id == 2) {
+	   						row.css = 'active';
+	   					} else {
+	   						row.css = '';
+	   					}
+	   				});
+	    	   },
+	    	   title: 'Carrière',
+	    	   src: 'img/web_site_img/wireframing.png',
+	    	   text:'Si vous voulez en connaitre un peu plus sur mon parcours scolaire et professionnel... recliquer ici.',
+	    	   active: false
+	       },
+	       {
+	    	   id: 1,
+	    	   link: function() {
+	    			$location.hash('work');
+	   		    	anchorSmoothScroll.scrollTo('work');
+	   		    	angular.forEach($scope.menu, function(row) {
+	   					if(row.id == 3) {
+	   						row.css = 'active';
+	   					} else {
+	   						row.css = '';
+	   					}
+	   				});
+	    	   },
+	    	   title: 'Projets',
+	    	   src: 'img/web_site_img/app_development.png',
+	    	   text:'Pour découvrir quelques projets grandement menés au cours de ma petite vie recliquer ici',
+	    	   active:false
+	       },
+	       {
+	    	   id: 2,
+	    	   link: function() {
+	    		   $location.path('/resume');
+	    	   },
+	    	   title: 'Loisir',
+	    	   src: 'img/web_site_img/graphic_design.png',
+	    	   text:'Si connaître mes loisirs t\'intéresse alors il faut recliquer ici.',
+	    	   active:false
+	       }
+	      ];
 		$scope.citation = {
 				text: 'Ce que je sais faire le mieux, c\'est partager mon enthousiasme. ',
 				author: 'Bill Gates'
@@ -227,8 +228,6 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		
 		/*<- CAREER PLAN */
 		
-
-
 		/* DIVERS ->*/
 		$scope.video = {title: 'Ma dernière video'};
 		$scope.hide = true;
@@ -240,43 +239,66 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		/*<- DIVERS */
 		
 		/* PROJECTS ->*/
-		
 		$scope.currentProject = 0;
 		$scope.projects = 
 		[
 		 {
 			 active: true,
-			 css:''
+			 css:'',
+			 text:
+				 [
+				  {paragraph: true, content: 'Application web J2EE - angularJS. Outil de gestion de documents réglementaires AF (édition, diffusion, briefing, statistique)'},
+				  {paragraph: true, content: '"Cette application ne ressemble en rien aux précédentes... son design et son côté intuitif la rendent très symphatique."'},
+				  {paragraph: false, content: 'Plus de détails, dans l\'espace "Carrière - Apside".'}
+				  ]
 		 },
 		 {
 			 active: false,
-			 css:'goRight'
+			 css:'goRight',
+			 text:
+				 [
+					{paragraph: true, content: 'Page d\'accueil de DIP (Démarche Innovation Participative). Cet outil, à destination des employés internes AF/KLM soit environ 90 000 personnes, est un outil collaboratif de gestion des idées et des challenges AF/KLM'},
+					{paragraph: true, content: 'Application web J2EE. Principales technologies utilisées : Java J2EE, GWT, GWT-D3 (wrapper d3.js), JavaScript, Spring, Oracle, JBPM4, Hibernate, SQL, CSS3, HTML5, XML, JUnit, CheckStyle, Eclipse, JPA, VisualVM, GIT, JIRA, Méthodes Agiles, Windows, Linux, Bamboo, UML (Papyrus), Shell, etc...'},
+					{paragraph: false, content: 'Plus de détails, dans l\'espace "Carrière - Apside".'}
+				  ]
 		 },
 		 {
 			 active: false,
-			 css:'goRight'
+			 css:'goRight',
+			 text:
+				 [
+					{paragraph: true, content: 'Je voudrais une application qui puisse tourner à la fois sur un navigateur web, mais également sur mobile (ios, android, windows phone'},
+					{paragraph: true, content: 'Application hybride. La principale technologie utilisée est cordova (ngCordova plus précisemment).'}
+				  ]
 		 }
 		];
 		
 		$scope.isActiveProject = function(val) {
 			return val == $scope.currentProject;
 		};
+		
+		$scope.modulo = function(n, m) {
+			return ((n % m) + m) % m;
+		};
 
 		$scope.jumpToProject = function(val) {
-			console.log("val :", val);
-			if(val > $scope.currentProject) {
-				
-			} else {
-				
+			var prevTrans = 'inTransition goLeft';
+			var nextTrans = 'goRight goLeft';
+			if(val < $scope.currentProject) {
+				prevTrans = 'goLeft';
+				nextTrans = 'inTransition goRight';
 			}
+			$scope.currentProject = $scope.modulo(val, 3);
+			$scope.projects[$scope.modulo(($scope.currentProject-1), 3)].css = prevTrans;
+			$scope.projects[$scope.currentProject].css = 'inTransition';
+			$scope.projects[$scope.modulo(($scope.currentProject+1), 3)].css = nextTrans;
 		};
 		
 		$scope.projectLeft = function() {
-			console.log("LEFT", "val-1 : ", ((($scope.currentProject-2) % 3) + 3) % 3, ", val : ", ((($scope.currentProject-1) % 3) + 3) % 3, "val+1 : ", $scope.currentProject);
-			$scope.projects[((($scope.currentProject-2) % 3) + 3) % 3].css = 'inTransition goRight';
-			$scope.projects[((($scope.currentProject-1) % 3) + 3) % 3].css = 'inTransition';
-			$scope.projects[$scope.currentProject].css = 'goLeft goRight';
-			$scope.currentProject = ((($scope.currentProject-2) % 3) + 3) % 3;
+			$scope.currentProject = $scope.modulo(($scope.currentProject-1), 3);
+			$scope.projects[$scope.modulo(($scope.currentProject-1), 3)].css = 'goLeft';
+			$scope.projects[$scope.currentProject].css = 'inTransition';
+			$scope.projects[$scope.modulo(($scope.currentProject+1), 3)].css = 'inTransition goRight';
 		};
 		
 		$scope.projectRight = function() {
