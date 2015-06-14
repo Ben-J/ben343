@@ -18,12 +18,12 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		/* MENU ->*/
 		$scope.menu = 
 		[
-		 {id: 0, title:'ACCUEIL', 		value:'services', 	css:''},
-		 {id: 1, title:'MOI',		 	value:'founders',	css:''},
-		 {id: 2, title:'SCOLAIRE', 		value:'process', 	css:''},
-		 {id: 3, title:'PROFESSIONNAL',	value:'work',  		css:''},
-		 {id: 4, title:'FAQ', 			value:'faq', 		css:''},
-		 {id: 5, title:'CONTACT', 		value:'contact',  	css:''}
+		 {id: 0, menuTitle:'Accueil', 		title:'Présentation', 		value:'services', 	css:''},
+		 {id: 1, menuTitle:'Loisir',		title:'Loisir',		 		value:'founders',	css:''},
+		 {id: 2, menuTitle:'Carrière', 		title:'Ma Carrière', 		value:'process', 	css:''},
+		 {id: 3, menuTitle:'Projets',		title:'Quelques Projets',	value:'work',  		css:''},
+		 {id: 4, menuTitle:'FAQ', 			title:'FAQ', 				value:'faq', 		css:''},
+		 {id: 5, menuTitle:'Contact', 		title:'Contact', 			value:'contact',  	css:''}
 		 ];
 		
 		$scope.goToAnchor = function(x) {
@@ -56,20 +56,23 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 					row.css = '';
 				}
 			});
+			if($scope.stream != null || $scope.stream != undefined) {
+				$scope.stream.pause();
+			}
 		};
 		/*<- MENU */
 		
-		/* TITLE ->*/
+		/* MOI ->*/
 		$scope.title = {
 			name: 'Benjamin Brion',
 			job: 'Ingénieur Logiciel',
-			accroche: 'réparties ou critiques'
+			accroche: '24 ans de créativité'
 		};
 		
-		/*<- TITLE */
+		/*<- MOI */
 		
 		/* ACCUEIL ->*/
-		$scope.services = [
+		$scope.plans = [
 		                   {
 		                	   id: 0,
 		                	   link: function() {
@@ -83,9 +86,9 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		               					}
 		               				});
 		                	   },
-		                	   title: 'Scolaire',
+		                	   title: 'Carrière',
 		                	   src: 'img/web_site_img/wireframing.png',
-		                	   text:'Si vous voulez en savoir un peu plus sur mon parcours scolaire... recliquer ici.',
+		                	   text:'Si vous voulez en connaitre un peu plus sur mon parcours scolaire et professionnel... recliquer ici.',
 		                	   active: false
 		                   },
 		                   {
@@ -101,9 +104,9 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		               					}
 		               				});
 		                	   },
-		                	   title: 'Professionnel',
+		                	   title: 'Projets',
 		                	   src: 'img/web_site_img/app_development.png',
-		                	   text:'Pour découvrir dans les grandes lignes mon parcours professionnel, recliquer ici',
+		                	   text:'Pour découvrir quelques projets grandement menés au cours de ma petite vie recliquer ici',
 		                	   active:false
 		                   },
 		                   {
@@ -122,59 +125,95 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 				author: 'Bill Gates'
 		};
 		$scope.isActive = function(val){
-			return $scope.services[val].active;
+			return $scope.plans[val].active;
 		};
 		
 		$scope.setActive = function(val) {
-			if(!$scope.services[val].active) {
-				$scope.services[val].active = !$scope.services[val].active;
+			if(!$scope.plans[val].active) {
+				$scope.plans[val].active = !$scope.plans[val].active;
 			} else {
-				$scope.services[val].link();
+				$scope.plans[val].link();
 			}
 		};
 		
 		$scope.keys = ['Jeune', 'Développeur', 'Réunionnais', 'IT','Motard', 'JAVA', 'Voyage', 'Foot'];
 		
-		$scope.test = function() {
-			console.log('test');
-		};
 		/*<- ACCUEIL */
 		
-		/* UNIVERSITY ->*/
-		$scope.schools = 
+		/* CAREER PLAN ->*/
+		$scope.career = 
 		[
-		 {id:0, label: 'Lycée', active: true, textcss: ''},
-		 {id:1, label: 'Licence', active: false, textcss: 'goRight'},
-		 {id:2, label: 'Master', active: false, textcss: 'goRight'},
-		 {id:3, label: 'Projet Web', active: false, textcss: 'goRight'},
-		 {id:4, label: 'Projet mobile', active: false, textcss: 'goRight'},
-		 {id:5, label: 'Stage', active: false, textcss: 'goRight'}
+		 {
+			id:0, 
+			label: 'Lycée', 
+			active: true, 
+			textcss: '',
+			url: '',
+			text: 'Baccalauréat scientifique option Physique-Chimie obtenu sur l’île de la Réunion (974) au lycée de Bellepierre.'
+		 },
+		 {
+			id:1, 
+			label: 'Université', 
+			active: false, 
+			textcss: 'goRight',
+			url: '',
+			text: 'Obtention d\'une licence en Informatique Fondamentale (Universite Paul Sabatier TOULOUSE III) et un master en informatique Développement Logiciel (toujours à l\’UPS de Toulouse).'
+		},
+		 {
+			id:2, 
+			label: 'Orange S.A.', 
+			active: false, 
+			textcss: 'goRight',
+			url: 'orange',
+			text: 'Stage Développeur-Concepteur. Réalisation d’une application Web à destination des ressources humaines pour aider à la gestion des horaires des employés. Unique développeur...'},
+		 {
+			id:3, 
+			label: 'Thales Group', 
+			active: false, 
+			textcss: 'goRight',
+			url: 'thales',
+			text: 'Apprentissage Ingénieur Développement Logiciel. Réalisation d\'un composant logiciel JAVA pour l’interopérabilité du nouveau système de gestion et de contrôle du trafic aérien européen 4FLIGHT.'
+		 },
+		 {
+			 id:4, 
+			 label: 'Apside', 
+			 active: false, 
+			 textcss: 'goRight',
+			 url: 'apside',
+			 text: 'Ingénieur d\'études – Conception et Développement Logiciel. En assitance technique pendant 2 ans chez Air France. J\'ai eu la chance de développer trois applications web...'},
+		 {
+			 id:5, 
+			 label: 'Astek', 
+			 active: false, 
+			 textcss: 'goRight',
+			 url: '',
+			 text: 'Ingénieur d\'études et de développement. En mission pour Thales Avionics et Air France afin de développer des applications destinées aux pilotes.'}
 		 ];
 		
 		$scope.currentSchoolPart = 0;
 		$scope.setActiveSchoolPart = function(x) {
 			if(x != $scope.currentSchoolPart) {
-				angular.forEach($scope.schools, function(row){
+				angular.forEach($scope.career, function(row){
 					row.active = (row.id == x);
 				});
 				if(x > $scope.currentSchoolPart) {
-					$scope.schools[$scope.currentSchoolPart].textcss = 'inTransition goLeft';
-					$scope.schools[x].textcss = 'inTransition';
+					$scope.career[$scope.currentSchoolPart].textcss = 'inTransition goLeft';
+					$scope.career[x].textcss = 'inTransition';
 					for(var i=0;i<=5;i++) {
 						if((i != $scope.currentSchoolPart) && (i != x)) {
 							if(i <$scope.currentSchoolPart) {
-								$scope.schools[i].textcss = 'goLeft';
+								$scope.career[i].textcss = 'goLeft';
 							} else {
-								$scope.schools[i].textcss = 'goRight goLeft';
+								$scope.career[i].textcss = 'goRight';
 							}
 						}
 					}
 				} else {
-					$scope.schools[$scope.currentSchoolPart].textcss = 'inTransition goRight';
-					$scope.schools[x].textcss = 'inTransition';
+					$scope.career[$scope.currentSchoolPart].textcss = 'inTransition goRight';
+					$scope.career[x].textcss = 'inTransition';
 					for(var i=0;i<=5;i++) {
 						if((i != $scope.currentSchoolPart) && (i != x)) {
-							$scope.schools[i].textcss = 'goLeft goRight';
+							$scope.career[i].textcss = 'goLeft goRight';
 						}
 					}
 				}
@@ -183,10 +222,71 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		};
 		
 		$scope.isActiveSchoolPart = function(x) {
-			return $scope.schools[x].active;
+			return $scope.career[x].active;
 		};
 		
-		/*<- UNIVERSITY */
+		/*<- CAREER PLAN */
+		
+
+
+		/* DIVERS ->*/
+		$scope.video = {title: 'Ma dernière video'};
+		$scope.hide = true;
+		$scope.playVideo = function() {
+			$scope.stream = document.getElementById('theVideo');
+			$scope.stream.play();
+			$scope.hide = false;
+		};
+		/*<- DIVERS */
+		
+		/* PROJECTS ->*/
+		
+		$scope.currentProject = 0;
+		$scope.projects = 
+		[
+		 {
+			 active: true,
+			 css:''
+		 },
+		 {
+			 active: false,
+			 css:'goRight'
+		 },
+		 {
+			 active: false,
+			 css:'goRight'
+		 }
+		];
+		
+		$scope.isActiveProject = function(val) {
+			return val == $scope.currentProject;
+		};
+
+		$scope.jumpToProject = function(val) {
+			console.log("val :", val);
+			if(val > $scope.currentProject) {
+				
+			} else {
+				
+			}
+		};
+		
+		$scope.projectLeft = function() {
+			console.log("LEFT", "val-1 : ", ((($scope.currentProject-2) % 3) + 3) % 3, ", val : ", ((($scope.currentProject-1) % 3) + 3) % 3, "val+1 : ", $scope.currentProject);
+			$scope.projects[((($scope.currentProject-2) % 3) + 3) % 3].css = 'inTransition goRight';
+			$scope.projects[((($scope.currentProject-1) % 3) + 3) % 3].css = 'inTransition';
+			$scope.projects[$scope.currentProject].css = 'goLeft goRight';
+			$scope.currentProject = ((($scope.currentProject-2) % 3) + 3) % 3;
+		};
+		
+		$scope.projectRight = function() {
+			$scope.projects[$scope.currentProject].css = 'inTransition goLeft';
+			$scope.projects[($scope.currentProject+1)%3].css = 'inTransition';
+			$scope.projects[($scope.currentProject+2)%3].css = 'goRight goLeft';
+			$scope.currentProject = ($scope.currentProject+1) % 3;
+		};
+		
+		/*<- PROJECTS */
 		
 		/* OLD VERSION */
 	
@@ -228,7 +328,6 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		    	color: 'rgb(139, 139, 139)'
 		    }
 	    ];
-		
 		$scope.navCarousel = function(direction, index) {
 			var current = index % $scope.carouselItems.length;
 			
@@ -254,7 +353,7 @@ benJControllers.controller('ResumeCtrl', ['$scope', '$log', '$state',
 			}
 		});
 		$scope.goToMenu = function() {
-			$state.go("benJ", {}, {reload: true});
+			$state.go("benJ", {'#':'process'}, {reload: true});
 		};
 		
 		$scope.subtitle = "Bonjour visiteur, bienvenu sur le site privé ben343.fr. Sur ce site vous pourrez retrouver des informations sur la vie professionnelle de Benjamin Brion.";

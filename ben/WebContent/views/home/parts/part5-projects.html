@@ -1,26 +1,25 @@
-
-<div id="work" class="slide" skrollr>
+<div in-view-container id="work" class="slide">
 	<h1>
-		<span class="web-only">Recent Work</span>
+		<span class="web-only">{{menu[3].title}}</span>
 	</h1>
 	<div class="project-bar">
-		<div class="dot active" hm-tap="workJumpTo(0)"
+		<div ng-class="{active:isActiveProject(0)}" class="dot" hm-tap="jumpToProject(0)"
 			style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
-		<div class="dot" hm-tap="workJumpTo(1)"
+		<div ng-class="{active:isActiveProject(1)}" class="dot" hm-tap="jumpToProject(1)"
 			style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
-		<div class="dot" hm-tap="workJumpTo(2)"
+		<div ng-class="{active:isActiveProject(2)}" class="dot" hm-tap="jumpToProject(2)"
 			style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
 	</div>
 
 	<div class="buttons">
-		<a class="left fa fa-angle-left" hm-tap="workLeft()"
+		<a class="left fa fa-angle-left" hm-tap="projectLeft()"
 			style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></a>
-		<a class="right fa fa-angle-right" hm-tap="workRight()"
+		<a class="right fa fa-angle-right" hm-tap="projectRight()"
 			style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></a>
 	</div>
 
 	<div class="container" style="height: 430px;">
-		<div class="work-slide">
+		<div ng-class="projects[0].css" class="work-slide">
 			<img class="" src="img/web_site_img/work1.jpg">
 
 			<div class="quotes">
@@ -58,11 +57,9 @@
 					</div>
 				</div>
 			</div>
-			<!-- /.quotes -->
 		</div>
-		<!-- /work-slide 1  ... nexthire -->
 
-		<div class="work-slide goRight">
+		<div ng-class="projects[1].css" class="work-slide">
 			<img class="" src="img/web_site_img/work2.jpg">
 
 			<div class="quotes small-top-padding">
@@ -109,12 +106,10 @@
 					</div>
 				</div>
 			</div>
-			<!-- /quotes -->
 
 		</div>
-		<!-- /work-slide 2 ... aunalytics -->
 
-		<div class="work-slide goRight">
+		<div ng-class="projects[2].css" class="work-slide">
 			<img class="" src="img/web_site_img/work3.jpg">
 
 			<div class="quotes">
@@ -154,11 +149,7 @@
 				</div>
 
 			</div>
-			<!-- /quotes -->
-
 		</div>
-		<!-- /work-slide 3 ... aisle0 -->
-
 	</div>
 </div>
-<!-- #/work -->
+<div in-view="$inview&&setActiveMenu('work')"></div>

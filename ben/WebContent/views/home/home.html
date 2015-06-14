@@ -12,7 +12,7 @@
 	<nav>
 		<span ng-repeat="m in menu"> 
 			<a class="" ng-class="{{'m.css'}}" ng-click="goToAnchor({{m.id}})">
-					{{m.title}}
+					{{m.menuTitle}}
 			</a>
 		</span>
 	</nav>
@@ -20,32 +20,31 @@
 
 <div id="body" in-view-container>
 
-	<div in-view="$inview&&setActiveMenu('')" ng-include src="'views/home/parts/title.html'"></div>
+	<div ng-include src="'views/home/parts/part1-moi.html'"></div>
 
-	<div in-view="$inview&&setActiveMenu('services')" ng-include src="'views/home/parts/presentation.html'"></div>
+	<div ng-include src="'views/home/parts/part2-accueil.html'"></div>
 
-	<div in-view="$inview&&setActiveMenu('founders')" ng-include src="'views/home/parts/divers.html'"></div>
+	<div ng-include src="'views/home/parts/part3-hobby.html'" ></div>
 
-	<div in-view="$inview&&setActiveMenu('process')" ng-include src="'views/home/parts/university.html'"></div>
+	<div ng-include src="'views/home/parts/part4-career-plan.html'"></div>
 
-	<div in-view="$inview&&setActiveMenu('work')" ng-include src="'views/home/parts/professionnal.html'"></div>
+	<div ng-include src="'views/home/parts/part5-projects.html'"></div>
 
-	<div in-view="$inview&&setActiveMenu('faq')" ng-include src="'views/home/parts/faq.html'"></div>
+	<div ng-include src="'views/home/parts/part6-faq.html'"></div>
 
-	<div in-view="$inview&&setActiveMenu('contact')" ng-include src="'views/home/parts/contact.html'"></div>
+	<div ng-include src="'views/home/parts/part7-contact.html'"></div>
 
 	<div id="footer">
 		<div class="wrapper">
 			<div class="column1">
-				<a ng-click="goToAnchor(0)">SERVICES</a><br>
-				<a ng-click="goToAnchor(1)">MEET THE FOUNDERS</a><br>
-				<a ng-click="goToAnchor(2)">WORK</a><br>
-				<a ng-click="goToAnchor(3)">PROCESS</a><br>
+				<a ng-click="goToAnchor(0)">Accueil</a><br>
+				<a ng-click="goToAnchor(1)">Dernière petite video</a><br>
+				<a ng-click="goToAnchor(2)">Plan de carrière</a><br>
+				<a ng-click="goToAnchor(3)">Quelques projets</a><br>
 			</div>
 			<div class="column2">
 				<a ng-click="goToAnchor(4)">FAQ</a><br>
 				<a ng-click="goToAnchor(5)">CONTACT</a><br>
-				<!--<a href="#blog">BLOG</a><br >-->
 			</div>
 			<div class="media">
 				<a class="fa fa-github" href="http://www.github.com/BenJ-343" target="blank"></a>
@@ -55,8 +54,6 @@
 		<p class="copyright">
 			Ben343 © 2015 &nbsp; | &nbsp; <a href="mailto:bubblespirit343@gmail.com">benjamin@ben343.fr</a>
 		</p>
-
 	</div>
-	<!-- /#footer -->
 </div>
 

@@ -1,4 +1,4 @@
-<div id="founders" class="slide" skrollr>
+<div in-view-container skrollr id="founders" class="slide">
 
 	<div class="vimeo-modal">
 		<div class="overlay" on-tap="closeVideo()"
@@ -11,21 +11,24 @@
 
 
 	<div class="video">
-		<h1 class="mobile-only">Meet the Founders</h1>
-		<img class="" src="img/web_site_img/video.jpg">
-		<div class="video-overlay skrollable skrollable-before"
+		<h1 class="mobile-only">{{video.title}}</h1>
+		<video id="theVideo" width="100%" preload='auto' controls>
+		  	<source src="img/video/moto.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+		<div ng-show="hide" class="video-overlay skrollable skrollable-before"
 			data-bottom-top="opacity:1;" data--100-top-top="opacity:0.7"
 			data-100-top-top="opacity:0.7" data-top-bottom="opacity[swing]:0.9;"
 			style="opacity: 1;"></div>
-		<div class="video-overlay-content skrollable skrollable-before"
-			data-anchor-target="#founders img" data-bottom-top="opacity:0;"
+		<div ng-show="hide" class="video-overlay-content skrollable skrollable-before"
+			data-anchor-target="#founders video" data-bottom-top="opacity:0;"
 			data--110-top-top="opacity:1" data-100-top-top="opacity:1"
 			data-top-bottom="opacity:0.2;" style="opacity: 0;">
-			<h1 class="web-only">Meet the Founders</h1>
-			<div class="play-background" onclick="playVideo()">
+			<h1 class="web-only">{{video.title}}</h1>
+			<div class="play-background" ng-click="playVideo()">
 				<div class="play-button"></div>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- /#founders -->
+<div in-view="$inview&&setActiveMenu('founders')"></div>

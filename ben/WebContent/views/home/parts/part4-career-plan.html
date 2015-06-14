@@ -1,9 +1,9 @@
-<div id="process" class="slide">
+<div in-view-container skrollr id="process" class="slide">
 	<img class="process-img web-only" src="img/web_site_img/mountain.jpg">
 	<img class="process-img mobile-only" src="img/web_site_img/mountain_mobile.jpg">
 
 	<div class="slide-wrapper">
-		<h1>Parcours scolaire</h1>
+		<h1>{{menu[2].title}}</h1>
 
 		<div class="timeline-wrapper">
 			<a class="tick conceptualize"
@@ -15,7 +15,7 @@
 				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
 				<div class="core"></div>
 				<div class="circle1"></div>
-				<div class="label">Lycée</div>
+				<div class="label">{{career[0].label}}</div>
 			</a>
 
 			<div class="line"></div>
@@ -28,7 +28,7 @@
 				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
 				<div class="core"></div>
 				<div class="circle1"></div>
-				<div class="label">Licence</div>
+				<div class="label">{{career[1].label}}</div>
 			</a>
 
 			<div class="line"></div>
@@ -41,7 +41,7 @@
 				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
 				<div class="core"></div>
 				<div class="circle1"></div>
-				<div class="label">Master</div>
+				<div class="label">{{career[2].label}}</div>
 			</a>
 
 			<div class="line"></div>
@@ -51,7 +51,7 @@
 				style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
 				<div class="core"></div>
 				<div class="circle1"></div>
-				<div class="label">Projet Web</div>
+				<div class="label">{{career[3].label}}</div>
 			</a>
 
 			<div class="line"></div>
@@ -61,7 +61,7 @@
 				style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
 				<div class="core"></div>
 				<div class="circle1"></div>
-				<div class="label">Projet mobile</div>
+				<div class="label">{{career[4].label}}</div>
 			</a>
 
 			<div class="line"></div>
@@ -71,33 +71,15 @@
 				style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
 				<div class="core"></div>
 				<div class="circle1"></div>
-				<div class="label">Stage</div>
+				<div class="label">{{career[5].label}}</div>
 			</a>
 		</div>
-		<!-- /.timeline-wrapper -->
 
 
-		<div class="explanation" ng-class="schools[0].textcss">We define all aspects of the software
-			product necessary to test your idea: value hypothesis, feature set,
-			data, customers, end-users, barriers to entry, etc.</div>
-		<div class="explanation" ng-class="schools[1].textcss">We collaborate over interactive
-			sketches of the application's flow, content, and structure to create
-			an intuitive and engaging user experience.</div>
-		<div class="explanation" ng-class="schools[2].textcss">We iterate through
-			professionally designed mockups to define the overall look and feel
-			of the application: color palette, fonts, animations, positioning,
-			spacing, etc.</div>
-		<div class="explanation" ng-class="schools[3].textcss">We code all front-end and
-			back-end needs for your application to create a reliable and
-			efficient product that captures your vision.</div>
-		<div class="explanation" ng-class="schools[4].textcss">We test all core features to
-			ensure everything is working properly, considering edge cases,
-			browser compatibility, and stylistic elements that impact the user
-			experience.</div>
-		<div class="explanation" ng-class="schools[5].textcss">We launch the application with
-			30 days of free support. Your app will be accompanied by an analytics
-			dashboard to ensure you understand your user behavior in real time.</div>
-
+		<div ng-repeat="c in career" class="explanation" ng-class="c.textcss">
+			{{c.text}}
+			<br><a ng-if="c.url != ''" ui-sref="experience_pro({'#': c.url})">en savoir plus...</a>
+		</div>
 	</div>
 </div>
-<!-- /#process -->
+<div in-view="$inview&&setActiveMenu('process')"></div>

@@ -1,5 +1,5 @@
-<div id="faq" class="slide" skrollr>
-	<h1>FAQ</h1>
+<div in-view-container id="faq" class="slide" skrollr>
+	<h1>{{menu[4].title}}</h1>
 	<div class="dot-bar">
 		<div class="dot active" on-tap="faqJumpTo(0)"
 			style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
@@ -19,7 +19,7 @@
 			<div class="left">
 
 				<div class="faq">
-					<h2>Why Uhray?</h2>
+					<h2>ben343, quelles technologies utilises-tu ?</h2>
 					<p>At Uhray, we're not just programmers. To build the best
 						possible products, we work collaboratively and strategically with
 						our clients throughout every step of the process. We bring years
@@ -28,12 +28,12 @@
 				</div>
 
 				<div class="faq">
-					<h2>How long will my project take?</h2>
+					<h2>Raconte nous en plus ?</h2>
 					<p>Most projects take 2-3 months.</p>
 				</div>
 
 				<div class="faq payment">
-					<h2>What are the costs and payment options?</h2>
+					<h2>Mais t'es motard ?</h2>
 					<p>
 						Exact pricing for wireframing, app design, and app development
 						depends on the overall scope and your specific requirements. In
@@ -48,14 +48,14 @@
 
 			<div class="right goRight">
 				<div class="faq">
-					<h2>What types of software do you create?</h2>
+					<h2>Quel type de développeur es-tu ?</h2>
 					<p>In the past, we have developed websites, web apps, mobile
 						apps, desktop apps, APIs, and many other things. We're passionate
 						about finding the right software solutions for each idea.</p>
 				</div>
 
 				<div class="faq">
-					<h2>What happens after the product launch?</h2>
+					<h2>La réunion ne te manque pas ?</h2>
 					<p>We provide 30 days of free bug support. Your app will also
 						come with an analytics dashboard, allowing you to understand your
 						app's user behavior in realtime. After launch, you will have the
@@ -70,7 +70,7 @@
 
 		<div class="faq-slide goLeft">
 			<div class="faq left goRight other-options">
-				<h2>What are my other options?</h2>
+				<h2>Pourrais-tu m'aider ?</h2>
 				<p>
 					<b>Freelancers:</b> While inexpensive, this strategy requires you
 					to act as the CTO while managing isolated freelancers. This is very
@@ -94,7 +94,7 @@
 
 			<div class="right goRight">
 				<div class="faq">
-					<h2>What technologies do you use?</h2>
+					<h2>Quelles méthodes utilises-tu ?</h2>
 					<p>
 						Node.js with express.js <br> MongoDB with Mongoose <br>
 						REST API <br> HTML, CSS, JavaScript <br> PhoneGap,
@@ -108,7 +108,7 @@
 				</div>
 
 				<div class="faq agile">
-					<h2>Do you use agile development?</h2>
+					<h2>Critiques ou réparties ?</h2>
 					<p>
 						Some stages of our client delivery process, like wireframing and
 						app design, closely parallel <a
@@ -121,7 +121,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- / faq-slide 2 -->
 	</div>
 </div>
-<!-- /#faq -->
+<div in-view="$inview&&setActiveMenu('faq')"></div>
