@@ -396,6 +396,17 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		
 		/*<- FAQ */
 		
+		/* CONTACT ->*/
+		
+		$scope.sendEmail = function() {
+			console.log("not already handled");
+		};
+		
+		$scope.$on('mapInitialized', function(event, map) {
+		      console.log("map");
+		});
+		/*<- CONTACT */
+		
 		/* OLD VERSION */
 	
 		$scope.goTo = function(redir) {

@@ -7,6 +7,7 @@ var benApp = angular.module('benApp', [
   'ui.router',
   'angular-inview',
   'ngSanitize',
+  'ngMap',
   'benJControllers',
   'hobbyControllers',
   'benJDirectives',

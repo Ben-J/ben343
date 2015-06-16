@@ -3,20 +3,29 @@
 	<div class="wrapper">
 		<div class="left">
 			<form>
-				<label>Name:</label> 
-				<input type="text" placeholder="Name" value="" class="name">
+				<label>Nom:</label> 
+				<input type="text" placeholder="Nom" value="" class="name">
 				<label>Email:</label>
 				<input type="text" placeholder="Email" value="" class="email">
 				<label>Message:</label>
 				<textarea placeholder="Message" class="message"></textarea>
-				<input class="send" type="submit" value="Send" on-tap="sendEmail()"
-					style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+				<input class="send work-style" type="submit" value="Envoyer" hm-tap="sendEmail()">
 			</form>
 			<div class="response"></div>
 		</div>
 		<div class="right">
-			<img class="" src="img/web_site_img/location.jpg" height:=""
-				200px;="">
+ 			 <map center="-21.1306888, 55.5264794"
+ 			 	  disable-default-u-i="true"
+ 			 	  zoom="10"
+ 				  min-zoom="8"
+ 				  style="height:400px;margin-top:60px;"
+ 				  styles="[{stylers:[{visibility:'simplified'}]},{elementType:'labels',stylers:[{visibility:'off'}]},{featureType:'water'}]"
+ 				  map-type-id="TERRAIN">
+ 			 	<marker position="-21.258986, 55.432126" title="Ma kaz!"></marker>
+ 			 	<shape name="rectangle" id="foo" stroke-color="#FF0000" stroke-opacity="0.8" 
+ 			 		   stroke-weight="2" fill-color="#FF0000" fill-opacity="0.35">
+       			 </shape>
+ 			 </map>
 		</div>
 	</div>
 </div>
