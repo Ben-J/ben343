@@ -1,119 +1,61 @@
 <div in-view-container id="faq" class="slide" skrollr>
 	<h1>{{menu[4].title}}</h1>
 	<div class="dot-bar">
-		<div class="dot active" on-tap="faqJumpTo(0)"
-			style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
-		<div class="dot" on-tap="faqJumpTo(1)"
-			style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
+		<div ng-class="{active:isActiveFaq(0)}" class="dot work-style"
+			hm-tap="jumpToFaq(0)"></div>
+		<div ng-class="{active:isActiveFaq(1)}" class="dot work-style"
+			hm-tap="jumpToFaq(1)"></div>
 	</div>
 
 	<div class="buttons">
-		<a class="left fa fa-angle-left" on-tap="faqLeft()"
-			style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></a>
-		<a class="right fa fa-angle-right" on-tap="faqRight()"
-			style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></a>
+		<a class="left fa fa-angle-left work-style" hm-tap="faqLeft()"></a>
+		<a class="right fa fa-angle-right work-style" hm-tap="faqRight()"></a>
 	</div>
 
 	<div class="slideshow" style="height: 373px;">
-		<div class="faq-slide">
+		<div ng-class="questions[0].css" class="faq-slide">
 			<div class="left">
-
 				<div class="faq">
-					<h2>Quelles technologies sont utilisées pour ben343.fr ?</h2>
-					<p> Ce site web (~application web) se doit d'être une petite vitrine de 
-						mes compétences. Par conséquence j'ai décidé d'utiliser les technologies
-						suivantes : angularJS, Node.js, Apache Tomcat (serveur). De
-						nombreuses librairies comme : font-awesome, hammerjs, skrollr, etc.
-						Des outils tels que Npm, bower, gulp, etc.
-					</p>
+					<h2>{{questions[0].content[0].title}}</h2>
+					<p ng-bind-html="questions[0].content[0].text"></p>
 				</div>
-
 				<div class="faq">
-					<h2>Quel est ton prénom ?</h2>
-					<p>Je m'appelle Benjamin, mais tu peux m'appeler Ben.</p>
+					<h2>{{questions[0].content[1].title}}</h2>
+					<p ng-bind-html="questions[0].content[1].text"></p>
 				</div>
-
 				<div class="faq payment">
-					<h2>Quelles sont tes principaux loisirs ?</h2>
-					<p>
-						Je suis à l'affût des nouvelles technologies de manière générale. Je suis 
-						sportif, je fais principalement du foot. J'ai été licencié footballeur 
-						pendant plus de 15 ans à l'île de la réunion. Je fais actuellement du futsal 
-						toutes les semaines... Je possède actuellement une Honda Hornet 600 avec laquelle 
-						j'entreprends quelques balades le week-end.
-					</p>
+					<h2>{{questions[0].content[2].title}}</h2>
+					<p ng-bind-html="questions[0].content[2].text"></p>
 				</div>
 			</div>
-
 			<div class="right goRight">
 				<div class="faq">
-					<h2>Quel développeur es-tu ?</h2>
-					<p>J'ai conçu et développé de nombreux logiciels : des sites web, des
-						applications web, des applications mobile, des applications bureautique, 
-						et pleins d'autres choses. Je ne suis pas cantonné à un langage et à une
-						technologie même si je ne vous cache pas que j'ai une petite préférence
-						pour la conception et le développement de composant/logiciel JAVA. Le genre
-						de projet où la technique est primordiale.</p>
+					<h2>{{questions[0].content[3].title}}</h2>
+					<p ng-bind-html="questions[0].content[3].text"></p>
 				</div>
 
 				<div class="faq">
-					<h2>Es-tu un geek ?</h2>
-					<p>
-						Geek ? Oui je le suis un peu... forcement. J'aime les jeux vidéos 
-						et les jeux de réflexions. Mais au-delà de ça je joue parce que j’y trouve un intérêt, 
-						ce n’est pas seulement pour le plaisir de jouer. J'aime à dire que le
-						cerveau est un muscle et jouer c'est le soumettre à un stimuli pour éviter
-						qu'il s’atrophie. Par je leu j'entraîne donc ma mémoire, mes réflexes et ma vigilance.
-					</p>
+					<h2>{{questions[0].content[4].title}}</h2>
+					<p ng-bind-html="questions[0].content[4].text"></p>
 				</div>
 			</div>
 		</div>
-		<!-- /slide1 -->
 
-
-		<div class="faq-slide goLeft">
+		<div ng-class="questions[1].css" class="faq-slide">
 			<div class="faq left goRight other-options">
-				<h2>Pourrais-tu m'aider ?</h2>
-				<p>
-					Si tu as des questions à me poser concernant ce site web, si tu 
-					souhaites développer un site ou une application web et que tu 
-					aimerais utiliser un de mes composants graphiques, si tu veux 
-					télécharger mes différents rapports de projets (Orange S.A et 
-					Thales Air Systems), si tu veux discuter de mes loisirs (foot, 
-					moto, nouvelles technologies), si tu veux discuter de ma carrière,
-					alors n'hésites pas à <a href="#contact">me contacter</a>.
-					Si tu as un projet web en tête et que tu te poses des questions sur : 
-					les technologies à utiliser ? l'architecture à mettre en place ? 
-					le temps de développement ? le côut de développement ? alors ici aussi, 
-					n'hésites pas à <a href="#contact">me contacter</a>.
-				</p>
+				<h2>{{questions[1].content[0].title}}</h2>
+				<p ng-bind-html="questions[1].content[0].text"></p>
 			</div>
 
 			<div class="faq agile">
-				<h2>Et sinon, es-tu engagé ?</h2>
-				<p>
-					En parallèle de mes activités personnelles et professionnelles, je me
-					suis engagé dans des associations. J'ai été pendant 2 ans
-					responsable du pôle évènements de l'association des anciens élèves du master
-					Développement Logiciel (association M2DL) de l'Université Paul Sabatier III.
-					<a href="m2dl" target="_blank">site de l'association</a>.
-					Je suis également engagé depuis plus de dix ans dans l'association France 
-					Alzheimer Réunion. Pour plus de détails sur mon engagement, vous pouvez consulter
-					<a href="associationFAR" target="_blank">cette page</a>.
-				</p>
+				<h2>{{questions[1].content[1].title}}</h2>
+				<p ng-bind-html="questions[1].content[1].text"></p>
 			</div>
 
 			<div class="right goRight">
 				<div class="faq">
-					<h2>Quelques technologies et outils utilisés au cours de ma carrière ?</h2>
-					<p>
-						Node.js with express.js <br> MongoDB with Mongoose <br>
-						REST API <br> HTML, CSS, JavaScript <br> PhoneGap,
-						Cordova<br> Git, GitHub<br>
-					</p>
-					<p class="extra">Les outils de gestions de projet atlassian : JIRA,
-						Bamboo, Confluence, Sonar... 
-					</p>
+					<h2>{{questions[1].content[2].title}}</h2>
+					<p ng-bind-html="questions[1].content[2].text"></p>
 				</div>
 			</div>
 		</div>
