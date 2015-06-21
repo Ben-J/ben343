@@ -288,6 +288,17 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 				prevTrans = 'goLeft';
 				nextTrans = 'inTransition goRight';
 			}
+			if ((val == 0) && ($scope.currentProject == 2)) {
+				prevTrans='inTransition goRight';
+				nextTrans='goRight';
+			} else if (($scope.currentProject == 0) && (val == 2)) {
+				if($scope.projects[val] == 'goLeft') {
+					prevTrans='goLeft';
+					nextTrans='inTransition goRight ';
+				}
+				prevTrans='goLeft';
+				nextTrans='inTransition goLeft ';
+			}
 			$scope.currentProject = $scope.modulo(val, 3);
 			$scope.projects[$scope.modulo(($scope.currentProject-1), 3)].css = prevTrans;
 			$scope.projects[$scope.currentProject].css = 'inTransition';
@@ -320,7 +331,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 				 [
 				  {
 					  title: "Quelles technologies sont utilisées pour ben343.fr ?",
-					  text: "Ce site web (~application web) se doit d'être une petite vitrine de mes compétences. Par conséquence j'ai décidé d'utiliser les technologies suivantes : angularJS, Node.js, Apache Tomcat. De nombreuses librairies comme : font-awesome, hammerjs, skrollr, etc. Des outils tels que Npm, bower, gulp, etc."
+					  text: "Ce site web (~application web) a été développé à l'aide de : angularJS, Node.js, Apache Tomcat. Hébergé sur un serveur Debian. De nombreuses librairies : font-awesome, hammerjs, skrollr, etc. Des outils tels que Npm, bower, gulp, etc."
 				  },
 				  {
 					  title: "Quel est ton prénom ?",
@@ -328,7 +339,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 				  },
 				  {
 					  title: "Quelles sont tes principaux loisirs ?",
-					  text: "Je suis à l'affût des nouvelles technologies de manière générale. Je suis sportif, je fais principalement du foot. J'ai été licencié footballeur pendant plus de 15 ans à l'île de la réunion. Je fais actuellement du futsal toutes les semaines... Je possède actuellement une Honda Hornet 600 avec laquelle j'entreprends quelques balades le week-end."
+					  text: "Je suis à l'affût des nouvelles technologies de manière générale. Je suis sportif, je fais principalement du foot. J'ai été licencié footballeur pendant plus de 15 ans à l'île de la réunion. Je fais actuellement du futsal toutes les semaines... Je possède également une Honda Hornet 600 avec laquelle j'entreprends quelques balades le week-end."
 				  },
 				  {
 					  title: "Quel développeur es-tu ?",
@@ -336,7 +347,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 				  },
 				  {
 					  title: "Es-tu un geek ?",
-					  text: "Geek ? Oui je le suis un peu... forcement. J'aime les jeux vidéos et les jeux de réflexions. Mais au-delà de ça je joue parce que j’y trouve un intérêt, ce n’est pas seulement pour le plaisir de jouer. J'aime à dire que le cerveau est un muscle et jouer c'est le soumettre à un stimuli pour éviter qu'il s’atrophie. Par je leu j'entraîne donc ma mémoire, mes réflexes et ma vigilance."
+					  text: "Geek ? Oui je le suis un peu... forcement. J'aime les jeux vidéos et les jeux de réflexions. Mais au-delà de ça je joue parce que j’y trouve un intérêt, ce n’est pas seulement pour le plaisir de jouer. J'aime à dire que le cerveau est un muscle et jouer c'est le soumettre à un stimuli pour éviter qu'il s’atrophie. Par je leu j'entraîne donc ma mémoire, mes réflexes et ma vigilance. (Dernier jeu joué : The Witcher 3 - PS4)"
 				  }
 				 ]
 		 },
@@ -366,32 +377,38 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		};
 		
 		$scope.jumpToFaq = function(val) {
-			console.log("val : ", val);
-			if(val > $scope.currentQuestion) {
+			if(val==0) {
 				$scope.faqRight();
-			} else {
+			}
+			if(val==1) {
 				$scope.faqLeft();
 			}
 		};
 		
 		$scope.faqRight = function() {
-			$scope.currentQuestion = $scope.modulo(($scope.currentQuestion-1), 2);
-			$scope.questions[$scope.modulo(($scope.currentQuestion-1), 2)].css = 'inTransition goLeft';
-			$scope.questions[$scope.currentQuestion].css = 'inTransition';
-			$timeout( function(){
-				$scope.questions[$scope.modulo(($scope.currentQuestion-1), 2)].css = 'goRight';
-				$scope.questions[$scope.currentQuestion].css = '';
-			}, 900);
+			$scope.currentQuestion = $scope.modulo(($scope.currentQuestion+1), 2);
+			if($scope.currentQuestion == 0) {
+				$scope.questions[0].css = 'inTransition';
+				$scope.questions[1].css = 'inTransition goRight';
+//				$timeout( function(){$scope.questions[1].css = 'goRight';}, 900);
+			} else {
+				$scope.questions[0].css = 'inTransition goLeft';
+				$scope.questions[1].css = 'inTransition';
+//				$timeout( function(){$scope.questions[0].css = 'goLeft';}, 900);
+			}
 		};
 		
 		$scope.faqLeft = function() {
-			$scope.currentQuestion = $scope.modulo(($scope.currentQuestion+1), 2);
-			$scope.questions[$scope.currentQuestion].css = 'inTransition';
-			$scope.questions[$scope.modulo(($scope.currentQuestion+1), 2)].css = 'inTransition goRight';
-			$timeout( function(){
-				$scope.questions[$scope.currentQuestion].css = '';
-				$scope.questions[$scope.modulo(($scope.currentQuestion+1), 2)].css = 'goLeft';
-			}, 900);
+			$scope.currentQuestion = $scope.modulo(($scope.currentQuestion-1), 2);
+			if($scope.currentQuestion == 0) {
+				$scope.questions[0].css = 'inTransition';
+				$scope.questions[1].css = 'inTransition goRight';
+//				$timeout( function(){$scope.questions[1].css = 'goRight';}, 900);
+			} else {
+				$scope.questions[0].css = 'inTransition goLeft';
+				$scope.questions[1].css = 'inTransition';
+//				$timeout( function(){$scope.questions[0].css = 'goLeft';}, 900);
+			}
 		};
 		
 		/*<- FAQ */
