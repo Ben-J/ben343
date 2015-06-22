@@ -1,5 +1,6 @@
-<div in-view-container id="faq" class="slide" skrollr>
-	<h1>{{menu[4].title}}</h1>
+<div in-view-container id="faq" class="slide web-only" skrollr style="min-height: 640px;" resize>
+	<h1 class="web-only">{{menu[4].title}}</h1>
+	<h1 class="mobile-only">Non dispo sur mobile</h1>
 	<div class="dot-bar">
 		<div ng-class="{active:isActiveFaq(0)}" class="dot work-style" hm-tap="jumpToFaq(0)"></div>
 		<div ng-class="{active:isActiveFaq(1)}" class="dot work-style" hm-tap="jumpToFaq(1)"></div>
@@ -10,7 +11,7 @@
 		<a class="right fa fa-angle-right work-style" hm-tap="faqRight()"></a>
 	</div>
 
-	<div class="slideshow" style="height: 373px;">
+	<div class="slideshow" style="min-height: 373px;">
 		<div ng-class="questions[0].css" class="faq-slide">
 			<div class="left">
 				<div class="faq">

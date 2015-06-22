@@ -1,6 +1,6 @@
-<div in-view-container id="work" class="slide">
+<div in-view-container id="work" class="slide" resize>
 	<h1>
-		<span class="web-only">{{menu[3].title}}</span>
+		{{menu[3].title}}
 	</h1>
 	<div class="project-bar">
 		<div ng-class="{active:isActiveProject(0)}" class="dot work-style" hm-tap="jumpToProject(0)"></div>
@@ -13,7 +13,7 @@
 		<a class="right fa fa-angle-right work-style" hm-tap="projectRight()"></a>
 	</div>
 
-	<div class="container" style="height: 480px;">
+	<div class="container" ng-class="{'projects-web':(windowWidth>=900),'projects-mobile':(windowWidth<900)}">
 		<div ng-class="projects[0].css" class="work-slide" ng-include src="'views/home/parts/projects/sopra-project.html'"></div>
 		<div ng-class="projects[1].css" class="work-slide" ng-include src="'views/home/parts/projects/dip-project.html'"></div>
 		<div ng-class="projects[2].css" class="work-slide" ng-include src="'views/home/parts/projects/surf-project.html'"></div>

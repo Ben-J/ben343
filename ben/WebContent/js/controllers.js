@@ -19,9 +19,9 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		$scope.menu = 
 		[
 		 {id: 0, menuTitle:'Accueil', 		title:'Présentation', 		value:'services', 	css:''},
-		 {id: 1, menuTitle:'Loisir',		title:'Loisir',		 		value:'founders',	css:''},
+		 {id: 1, menuTitle:'Loisir',		title:'Loisirs',		 	value:'founders',	css:''},
 		 {id: 2, menuTitle:'Carrière', 		title:'Ma Carrière', 		value:'process', 	css:''},
-		 {id: 3, menuTitle:'Projets',		title:'Projets',	value:'work',  		css:''},
+		 {id: 3, menuTitle:'Projets',		title:'Projets',			value:'work',  		css:''},
 		 {id: 4, menuTitle:'FAQ', 			title:'FAQ', 				value:'faq', 		css:''},
 		 {id: 5, menuTitle:'Contact', 		title:'Contact', 			value:'contact',  	css:''}
 		 ];
@@ -89,7 +89,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 	    	   },
 	    	   title: 'Carrière',
 	    	   src: 'img/web_site_img/wireframing.png',
-	    	   text:'Si vous voulez en connaitre un peu plus sur mon parcours scolaire et professionnel... recliquer ici.',
+	    	   text:'Si vous voulez en savoir un peu plus sur mon parcours scolaire et professionnel... c\'est par ici.',
 	    	   active: false
 	       },
 	       {
@@ -115,9 +115,9 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 	    	   link: function() {
 	    		   $location.path('/resume');
 	    	   },
-	    	   title: 'Loisir',
+	    	   title: 'Loisirs',
 	    	   src: 'img/web_site_img/graphic_design.png',
-	    	   text:'Si connaître mes loisirs t\'intéresse alors il faut recliquer ici.',
+	    	   text:'Pour avoir une petite idée de mes loisirs c\'est pas là !',
 	    	   active:false
 	       }
 	      ];
