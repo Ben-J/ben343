@@ -26,13 +26,18 @@ benApp.config(['$stateProvider', '$urlRouterProvider',
 	})
 	.state('cv', {
 		url: '/cv',
-		templateUrl: 'views/cv/cv.html',
+		templateUrl: 'views/resume/cv.html',
 		controller: 'CvCtrl'
 	})
 	.state('resume', {
 		url: '/resume',
 		templateUrl: 'views/resume/resume.html',
 		controller: 'ResumeCtrl'
+	})
+	.state('loisirs', {
+		url: '/loisirs',
+		templateUrl: 'views/resume/carousel.html',
+		controller: 'CarouselCtrl'
 	})
 	.state('experience_pro', {
 		url: '/experience_pro',

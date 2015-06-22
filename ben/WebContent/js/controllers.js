@@ -6,7 +6,6 @@ var benJControllers = angular.module('benJControllers', []);
 
 benJControllers.controller('GlobalCtrl', ['$scope', '$log',
 	function($scope, $log) {
-
 		$scope.showFooter = true;
 	}
 ]);
@@ -113,7 +112,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 	       {
 	    	   id: 2,
 	    	   link: function() {
-	    		   $location.path('/resume');
+	    		   $location.path('/loisirs');
 	    	   },
 	    	   title: 'Loisirs',
 	    	   src: 'img/web_site_img/graphic_design.png',
@@ -423,58 +422,68 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		      console.log("map");
 		});
 		/*<- CONTACT */
-		
-		/* OLD VERSION */
-	
-		$scope.goTo = function(redir) {
-			$scope.showFooter = false;
-			$state.go(redir, {}, {reload: true});
-		};
-		
-		$scope.carouselIndex = 0;
-		$scope.carouselItems = [
-		    {
-		    	title: 'Benjamin Brion',
-		    	src:'img/FOND_AMSTERDAM_LAC.JPG', 
-		    	text: 'Mon parcours scolaire... mon parcours professionnel...',
-		    	clickLabel: 'Regarder un peu',
-		    	click: 'resume',
-		    	active: true,
-		    	id: 0,
-		    	color: 'rgb(65, 59, 59)'
-		    },
-		    {
-		    	title: 'Expérience Professionnelle',
-		    	src:'img/FOND_BOUCAN.png', 
-		    	text: '...',
-		    	clickLabel: 'Y accéder',
-		    	click: 'experience_pro',
-		    	active: false,
-		    	id: 1,
-		    	color: '#E2E2E2'
-		    },
-		    {
-		    	title: 'Mon CV',
-		    	src:'img/FOND_FORET_NEIGE.JPG', 
-		    	text: '...',
-		    	clickLabel: 'Y accéder',
-		    	click: 'todo',
-		    	active: false,
-		    	id: 2,
-		    	color: 'rgb(139, 139, 139)'
-		    }
-	    ];
-		$scope.navCarousel = function(direction, index) {
-			var current = index % $scope.carouselItems.length;
-			
-			angular.forEach($scope.carouselItems, function(value) {
-				value.active = false;
-			});
-			console.log("item", $scope.carouselItems[current]);
-			$scope.carouselItems[current].active = true;
-		};
   	}
 ]);
+
+benJControllers.controller('CarouselCtrl', ['$scope', '$http', '$timeout', '$log', '$animate', '$state', 
+                                        '$location', '$anchorScroll', 'anchorSmoothScroll', '$filter',
+    function($scope, $http, $timeout, $log, $animate, $state, $location, $anchorScroll, 
+    		anchorSmoothScroll, $filter) {
+
+	skrollr.init({
+		constants: {
+			box: '150p'
+		}
+	});
+
+	$scope.goTo = function(redir) {
+		$scope.showFooter = false;
+		$state.go(redir, {}, {reload: true});
+	};
+	
+	$scope.carouselIndex = 0;
+	$scope.carouselItems = [
+	    {
+	    	title: 'Benjamin Brion',
+	    	src:'img/FOND_AMSTERDAM_LAC.JPG', 
+	    	text: 'Mon parcours scolaire... mon parcours professionnel...',
+	    	clickLabel: 'Regarder un peu',
+	    	click: 'resume',
+	    	active: true,
+	    	id: 0,
+	    	color: 'rgb(65, 59, 59)'
+	    },
+	    {
+	    	title: 'Expérience Professionnelle',
+	    	src:'img/FOND_BOUCAN.png', 
+	    	text: '...',
+	    	clickLabel: 'Y accéder',
+	    	click: 'experience_pro',
+	    	active: false,
+	    	id: 1,
+	    	color: '#E2E2E2'
+	    },
+	    {
+	    	title: 'Mon CV',
+	    	src:'img/FOND_FORET_NEIGE.JPG', 
+	    	text: '...',
+	    	clickLabel: 'Y accéder',
+	    	click: 'todo',
+	    	active: false,
+	    	id: 2,
+	    	color: 'rgb(139, 139, 139)'
+	    }
+    ];
+	$scope.navCarousel = function(direction, index) {
+		var current = index % $scope.carouselItems.length;
+		
+		angular.forEach($scope.carouselItems, function(value) {
+			value.active = false;
+		});
+		console.log("item", $scope.carouselItems[current]);
+		$scope.carouselItems[current].active = true;
+	};
+}]);
 
 benJControllers.controller('CvCtrl', ['$scope', '$log',
 	function($scope, $log) {
