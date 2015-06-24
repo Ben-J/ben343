@@ -359,6 +359,7 @@ body.noAnimation #header {
 	bottom: 0;
 	left: 26%;
 	width: 48%;
+  	margin-top: 9px;
 	border-radius: 50%;
 	font-size: .14em;
 	line-height: 1.0;
@@ -375,7 +376,7 @@ body.noAnimation #header {
 	position: absolute;
 	width: 100%;
 	padding: 0.9em;
-	top: 50%;
+	top: 43%;
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
@@ -1071,7 +1072,7 @@ body.noAnimation #header {
 #faq .slideshow .faq-slide .faq {
 	width: 50%;
 	float: left;
-	margin-top: 0.2em;
+/* 	margin-top: 0.2em; */
 }
 
 #faq .slideshow .faq-slide .faq:first-child {
@@ -2248,4 +2249,65 @@ body.noAnimation #header {
 
 .projects-mobile {
 	min-height: 820px;
+}
+
+.glass-effect {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+}
+
+.opacity-carousel {
+	opacity: 0.5;
+}
+
+.navigation-page {
+	position: absolute;
+	color: white;
+	opacity: 0.8;
+	margin: 0% 0% 0% 1%;
+	z-index: 1;
+}
+
+.navigation-return {
+  	font-size: 3em;
+ 	cursor: pointer;
+	z-index: 1;
+}
+
+.navigation-info {
+	position: absolute;
+	top: 6%;
+	right: 5%;
+	top: 6%;
+  	right: 6%;
+  font-size: 20px;
+ 	color: white;
+}
+
+.navigation-camera {
+	position: absolute;
+	bottom: 6%;
+	right: 5%;
+	font-size: 30px;
+ 	color: white;
+}
+
+.navigation-right {
+	right: 1%;
+	font-size: 100px;
+	color: white;
+	transform-style: flat;
+    -webkit-transition: 1s;
+ 	-webkit-transform: translateZ(0px);
+}
+
+.navigation-left {
+	left: 1%;
+	font-size: 100px;
+	color: white;
+  	transform-style: flat;
+    -webkit-transition: 1s;
+ 	-webkit-transform: translateZ(0px);
 }

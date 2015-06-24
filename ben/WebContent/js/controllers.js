@@ -435,43 +435,50 @@ benJControllers.controller('CarouselCtrl', ['$scope', '$http', '$timeout', '$log
 			box: '150p'
 		}
 	});
-
-	$scope.goTo = function(redir) {
-		$scope.showFooter = false;
-		$state.go(redir, {}, {reload: true});
+		
+	$scope.carouselRight = function() {
+		return "fa fa-angle-right";
+	};
+	
+	$scope.carouselLeft = function() {
+		return "fa fa-angle-left";
+	};
+	
+	$scope.goToMenu = function() {
+		$state.go('benJ', {}, {reload: true});
 	};
 	
 	$scope.carouselIndex = 0;
 	$scope.carouselItems = [
 	    {
-	    	title: 'Benjamin Brion',
-	    	src:'img/FOND_AMSTERDAM_LAC.JPG', 
-	    	text: 'Mon parcours scolaire... mon parcours professionnel...',
-	    	clickLabel: 'Regarder un peu',
-	    	click: 'resume',
 	    	active: true,
-	    	id: 0,
-	    	color: 'rgb(65, 59, 59)'
+	    	title: 'Amsterdam',
+	    	src:'img/FOND_AMSTERDAM_LAC.JPG',
+	    	date: 'vacance mars 2015'
 	    },
 	    {
-	    	title: 'Expérience Professionnelle',
+	    	active: false,
+	    	title: 'Ile de la réunion',
 	    	src:'img/FOND_BOUCAN.png', 
-	    	text: '...',
-	    	clickLabel: 'Y accéder',
-	    	click: 'experience_pro',
-	    	active: false,
-	    	id: 1,
-	    	color: '#E2E2E2'
+	    	date: 'vacance été 2013'
 	    },
 	    {
-	    	title: 'Mon CV',
-	    	src:'img/FOND_FORET_NEIGE.JPG', 
-	    	text: '...',
-	    	clickLabel: 'Y accéder',
-	    	click: 'todo',
 	    	active: false,
-	    	id: 2,
-	    	color: 'rgb(139, 139, 139)'
+	    	title: 'Lyon',
+	    	src:'img/gerland.JPG', 
+	    	date: 'OL - Saint-Etienne 2015'
+	    },
+	    {
+	    	active: false,
+	    	title: 'Pyrénées',
+	    	src:'img/FOND_FORET_NEIGE.JPG', 
+	    	date: 'vacance hiver 2014'
+	    },
+	    {
+	    	active: false,
+	    	title: 'Albi',
+	    	src:'img/moto-albi.png', 
+	    	date: 'balade mai 2015'
 	    }
     ];
 	$scope.navCarousel = function(direction, index) {

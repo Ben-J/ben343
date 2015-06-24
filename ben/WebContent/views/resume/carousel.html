@@ -1,28 +1,15 @@
+<div ng-include src="'views/templates/navigation.html'"></div>
 <div class="carousel content-full col-xs-12 col-sm-12 noMargin" resize>
 	<ul rn-carousel rn-carousel-duration="800" rn-carousel-controls rn-carousel-transition="zoom"
-		rn-carousel-auto-slide="3" class="image col-xs-12 col-sm-12 noMargin">
-		<li ng-repeat="slide in carouselItems"><img
-			class="col-xs-12 col-sm-12 noMargin" ng-src="{{slide.src}}">
-			<div class="container col-xs-12 col-sm-12">
-				<div class="home-title "
-					ng-class="{'font-size-12': windowWidth<=890 ,'font-size-14': windowWidth>890}"
-					ng-style="{ 'margin-top' : windowHeight/3, 'color': slide.color}">
-					<h1>{{slide.title}}</h1>
-					<!-- 					<p class="lead">{{slide.text}}</p> -->
-					<button class="btn btn-large btn-primary"
-						ng-click="goTo(slide.click)">{{slide.clickLabel}}</button>
-				</div>
+		 class="image col-xs-12 col-sm-12 noMargin">
+		<li ng-repeat="slide in carouselItems">
+			<img class="col-xs-12 col-sm-12 noMargin opacity-carousel" ng-src="{{slide.src}}">
+			<div class="navigation-info">
+				<span class="fa fa-calendar-o">&nbsp;&nbsp;{{slide.date}}</span>
+			</div>
+			<div class="navigation-camera">
+				<span class="fa fa-camera">&nbsp;&nbsp;{{slide.title}}</span>
 			</div>
 		</li>
 	</ul>
 </div>
-
-<!-- FOOTER -->
-<footer ng-show="showFooter" class="col-xs-12 margin-top2percent footer-ben">
-	<p class="pull-right">
-		<a href="#">Back to top</a>
-	</p>
-	<p>
-		© 2015 Ben343, Inc. · <a ui-sref="privacy">Privacy</a> · <a ui-sref="BenJ">Terms</a>
-	</p>
-</footer>
