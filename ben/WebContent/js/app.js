@@ -12,7 +12,8 @@ var benApp = angular.module('benApp', [
   'hobbyControllers',
   'benJDirectives',
   'benJServices',
-  'hmTouchEvents'
+  'hmTouchEvents',
+  'chart.js'
 ]);
 
 benApp.config(['$stateProvider', '$urlRouterProvider',

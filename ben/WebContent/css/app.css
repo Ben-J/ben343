@@ -100,6 +100,8 @@
 	margin-top: -70px;
 }
 
+
+.color-white { color: white; }
 /*** ------------------------------------------------------------------------------------------------- **/
 
 ol, ul {
@@ -430,106 +432,19 @@ body.noAnimation #header {
 	display: block;
 }
 
-#founders .vimeo-modal {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	z-index: 9999;
-	overflow-y: auto;
-	display: none;
+#founders .description {
+	padding: 35px;
+	text-align: center;
+	font-size: Helvetica;
 }
 
-#founders .vimeo-modal .overlay {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.8);
+#founders h1 {
+	color: white;
 }
 
-#founders .vimeo-modal div.player {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-}
-
-#founders .vimeo-modal div.player a {
-	color: #FFF;
-	position: absolute;
-	top: -19px;
-	right: -18px;
-	font-size: 30px;
-	cursor: pointer;
-}
-
-#founders .video-overlay {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: #000000;
-	opacity: 0.7;
-	z-index: 999;
-}
-
-#founders .video-overlay-content {
-	position: absolute;
-	top: 50%;
-	left: 0;
-	right: 0;
-	opacity: 1;
-	z-index: 999;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
-}
-
-#founders .video-overlay-content h1 {
-	color: #ffffff;
-}
-
-#founders .video-overlay-content .play-background {
-	position: relative;
-	width: 7vw;
-	height: 7vw;
-	border-radius: 50%;
-	margin: 2.5vw auto 0;
-	background: #1194F7;
-	cursor: pointer;
-	-webkit-transition: background 0.3s;
-	transition: background 0.3s;
-}
-
-#founders .video-overlay-content .play-background:hover {
-	background: #34A6FD;
-}
-
-#founders .video-overlay-content .play-background .play-button {
-	position: absolute;
-	top: 50%;
-	margin-top: -0.55vw;
-	left: 50%;
-	margin-left: -0.5vw;
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 0.7vw 0 0.7vw 1.4vw;
-	border-color: transparent transparent transparent #ffffff;
-	-webkit-transition: border-width 0.3s, margin 0.3s;
-	transition: border-width 0.3s, margin 0.3s;
-}
-
-#founders .video-overlay-content .play-background:hover .play-button {
-	border-width: 1.1vw 0 1.1vw 2.2vw;
-	margin-top: -1vw;
-	margin-left: -0.8vw;
+#founders h5 {
+	font-size: 2.0vw;
+  	font-family: inherit;
 }
 
 /* WORK */
@@ -2310,4 +2225,41 @@ body.noAnimation #header {
   	transform-style: flat;
     -webkit-transition: 1s;
  	-webkit-transform: translateZ(0px);
+}
+
+/* ------------------------------------------------ */
+/* P I E C H A R T   S T Y L E   
+/* ------------------------------------------------ */
+.chart {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 5px;
+	text-align: center;
+}
+.chart canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.percent-chart {
+	position: absolute;
+	top: 29%;
+	margin-left: -6%;
+	font-size: 2em;
+}
+.percent-chart:after {
+	content: '%';
+	margin-left: 0.1em;
+	font-size: 25px;
+	font-weight:500;
+}
+.pie-column{
+	text-align:center;
+	margin-bottom: 25px;
+}
+.pie-content h2{
+	margin-bottom: 0;
+	margin-top: 20px;
+	font-size: 22px;
+	color:#FFFFFF;
 }

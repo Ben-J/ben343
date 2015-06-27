@@ -1,32 +1,19 @@
-<div in-view-container skrollr id="founders" class="slide">
-
-	<div class="vimeo-modal">
-		<div class="overlay" on-tap="closeVideo()"
-			style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
-		<div class="player">
-			<a class="fa fa-times-circle web-only" on-tap="closeVideo()"
-				style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></a>
-		</div>
+<div in-view-container skrollr id="founders" class="slide color-white"  style="min-height: 590px;" skrollr resize>
+	<h1 class="title">Quelques compétences</h1>
+	<div class="clearfix"></div>
+	<div class="description col-md-12">
+		<h5 ng-bind-html="chartsIntro"></h5>
 	</div>
-
-
-	<div class="video">
-		<h1 class="mobile-only">{{video.title}}</h1>
-		<video id="theVideo" width="100%" preload='auto' controls>
-		  	<source src="img/video/moto.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-		</video>
-		<div ng-show="hide" class="video-overlay skrollable skrollable-before"
-			data-bottom-top="opacity:1;" data--100-top-top="opacity:0.7"
-			data-100-top-top="opacity:0.7" data-top-bottom="opacity[swing]:0.9;"
-			style="opacity: 1;"></div>
-		<div ng-show="hide" class="video-overlay-content skrollable skrollable-before"
-			data-anchor-target="#founders video" data-bottom-top="opacity:0;"
-			data--110-top-top="opacity:1" data-100-top-top="opacity:1"
-			data-top-bottom="opacity:0.2;" style="opacity: 0;">
-			<h1 class="web-only">{{video.title}}</h1>
-			<div class="play-background" ng-click="playVideo()">
-				<div class="play-button"></div>
+	<div class="clearfix"></div>
+	<div class="pie-wrapper color-white" style="margin: 50px 0 10px;">
+		<div class="pie-column col-md-3" ng-repeat="ch in charts">
+			<span class="percent-chart">{{ch.value}}</span>
+			<canvas
+				options="{animationEasing:'easeOutBounce', animationSteps:'100', segmentStrokeColor:'#313132', segmentStrokeWidth : '0', percentageInnerCutout : '85'}"
+				id="doughnut" class="chart chart-doughnut" colours="ch.colours"
+				labels="ch.labels" data="ch.data"></canvas>
+			<div class="pie-content color-white">
+				<h2>{{ch.title}}</h2>
 			</div>
 		</div>
 	</div>

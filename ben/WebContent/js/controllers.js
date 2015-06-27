@@ -18,7 +18,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		$scope.menu = 
 		[
 		 {id: 0, menuTitle:'Accueil', 		title:'Présentation', 		value:'services', 	css:''},
-		 {id: 1, menuTitle:'Loisir',		title:'Loisirs',		 	value:'founders',	css:''},
+		 {id: 1, menuTitle:'Compétences',	title:'Compétences',	 	value:'founders',	css:''},
 		 {id: 2, menuTitle:'Carrière', 		title:'Ma Carrière', 		value:'process', 	css:''},
 		 {id: 3, menuTitle:'Projets',		title:'Projets',			value:'work',  		css:''},
 		 {id: 4, menuTitle:'FAQ', 			title:'FAQ', 				value:'faq', 		css:''},
@@ -235,6 +235,40 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 			$scope.stream.play();
 			$scope.hide = false;
 		};
+		
+		$scope.chartsIntro = "Ci-dessous quelques chiffres qui vous permettront d'avoir une petite idée de mes compétences informatiques. Pour avoir plus de chiffres, vous pouvez également <a ui-sref=\"competences\">cliquer ici</a>.";
+		
+		$scope.charts = 
+			[
+			 {
+				 value: 85,
+				 title: 'AngularJs',
+				 labels: ["AngularJs", ""],
+				 colours: ["#3498DB", "#313132"],
+				 data: [85, 15]
+			 },
+			 {
+				 value: 90,
+				 title: 'Java',
+				 labels: ["Java", ""],
+				 colours: ["#FFC600", "#313132"],
+				 data: [90, 10]
+			 },
+			 {
+				 value: 70,
+				 title: 'Cordova',
+				 labels: ["Cordova", ""],
+				 colours: ["#E67E22", "#313132"],
+				 data: [70, 30]
+			 },
+			 {
+				 value: 95,
+				 title: 'Méthodes Agiles',
+				 labels: ["Méthodes Agiles", ""],
+				 colours: ["#13B0CB", "#313132"],
+				 data: [95, 5]
+			 }];
+		
 		/*<- DIVERS */
 		
 		/* PROJECTS ->*/
@@ -481,6 +515,7 @@ benJControllers.controller('CarouselCtrl', ['$scope', '$http', '$timeout', '$log
 	    	date: 'balade mai 2015'
 	    }
     ];
+	
 	$scope.navCarousel = function(direction, index) {
 		var current = index % $scope.carouselItems.length;
 		
