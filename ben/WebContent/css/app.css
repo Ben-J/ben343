@@ -102,6 +102,7 @@
 
 
 .color-white { color: white; }
+
 /*** ------------------------------------------------------------------------------------------------- **/
 
 ol, ul {
@@ -1366,41 +1367,7 @@ body.noAnimation #header {
 		display: none;
 	}
 	#founders {
-		background: #ffffff;
-	}
-	#founders .video {
-		position: relative;
-		margin: 0 auto;
-		width: 100%;
-	}
-	#founders .video h1 {
-		position: relative;
-		z-index: 1000;
-		color: #ffffff;
-		line-height: 1.2;
-		padding: 12vw 0 6vw;
-	}
-	#founders .video .video-overlay {
-		opacity: 0.5;
-	}
-	#founders .video .video-overlay-content {
-		height: 20vw;
-		margin-top: -10vw;
-		-webkit-transform: none;
-		-ms-transform: none;
-		transform: none;
-		top: 56%;
-	}
-	#founders .video .video-overlay-content .play-background {
-		margin: 0 auto;
-		width: 20vw;
-		height: 20vw;
-		border-radius: 10vw;
-	}
-	#founders .video .video-overlay-content .play-background .play-button {
-		border-width: 3vw 0 3vw 6vw;
-		margin-top: -2.7vw;
-		margin-left: -2.3vw;
+		background: #313132;
 	}
 	#work h1 {
 		margin: 12vw 0 6vw;
@@ -1819,41 +1786,7 @@ body.noAnimation #header {
 		display: none;
 	}
 	#founders {
-		background: #ffffff;
-	}
-	#founders .video {
-		position: relative;
-		margin: 0 auto;
-		width: 100%;
-	}
-	#founders .video h1 {
-		position: relative;
-		z-index: 1000;
-		color: #ffffff;
-		line-height: 1.2;
-		padding: 9vw 0 4.5vw;
-	}
-	#founders .video .video-overlay {
-		opacity: 0.5;
-	}
-	#founders .video .video-overlay-content {
-		height: 15vw;
-		margin-top: -7.5vw;
-		-webkit-transform: none;
-		-ms-transform: none;
-		transform: none;
-		top: 50%;
-	}
-	#founders .video .video-overlay-content .play-background {
-		margin: 0 auto;
-		width: 15vw;
-		height: 15vw;
-		border-radius: 7.5vw;
-	}
-	#founders .video .video-overlay-content .play-background .play-button {
-		border-width: 2.25vw 0 2.25vw 4.5vw;
-		margin-top: -2.025vw;
-		margin-left: -1.725vw;
+		background: #313132;
 	}
 	#work h1 {
 		margin: 9vw 0 4.5vw;
