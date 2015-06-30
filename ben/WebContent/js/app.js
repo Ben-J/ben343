@@ -9,7 +9,8 @@ var benApp = angular.module('benApp', [
   'ngSanitize',
   'ngMap',
   'benJControllers',
-  'hobbyControllers',
+  'ProjectControllers',
+  'SkillControllers',
   'benJDirectives',
   'benJServices',
   'hmTouchEvents',
@@ -49,6 +50,16 @@ benApp.config(['$stateProvider', '$urlRouterProvider',
 		url: '/privacy',
 		templateUrl: 'views/privacy/privacy.html',
 		controller: 'GlobalCtrl'
+	})
+	.state('skills', {
+		url: '/skills',
+		templateUrl: 'views/home/parts/skills/skills.html',
+		controller: 'SkillCtrl'
+	})
+	.state('projects', {
+		url: '/projects',
+		templateUrl: 'views/home/parts/projects/ups-projects.html',
+		controller: 'ProjectCtrl'
 	})
 	.state('todo', {
 		url: '/todo',

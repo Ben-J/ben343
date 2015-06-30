@@ -1,0 +1,83 @@
+<div ng-include src="'views/templates/navigation-skill.html'"></div>
+<div class="col-xs-12 bg-color-blue-ben" class="slide" skrollr>
+	<div class="text skrollable skrollable-between">
+		<h1 class="color-white"> Mes compétences </h1>
+		<div class="hr"></div>
+		<h3 class="text-center col-xs-12 margin-topm20 color-white">Liste non exhaustive :s</h3>
+	</div>
+	<div class="col-xs-12">
+		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 float-left panel bg-color-darkblue">
+			<!-- Default panel contents -->
+			<div class="panel-heading color-white">J2EE</div>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="j in j2ee">{{j.title}}</li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4  float-left panel bg-color-red">
+			<!-- Default panel contents -->
+			<div class="panel-heading color-white">Conceptions</div>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="c in conceptions">{{c.title}}</li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2  float-left panel bg-color-green">
+			<!-- Default panel contents -->
+			<div class="panel-heading color-white">Gestion de projets</div>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="m in management">
+					{{m.title}}
+					<i ng-repeat="i in getNumber(m.stars) track by $index" class="fa fa-star"></i>
+				</li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 float-left panel bg-color-grey">
+			<!-- Default panel contents -->
+			<div class="panel-heading color-white">Autres langages</div>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="ol in othersLanguages">{{ol.title}}</li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-5 col-md-5 col-lg-2 float-left panel bg-color-marron">
+			<!-- Default panel contents -->
+			<div class="panel-heading color-white">Frameworks/IDE</div>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="i in ides">{{i.title}}</li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 float-left panel bg-color-darkred">
+			<!-- Default panel contents -->
+			<div class="panel-heading color-white">Hybrid / Natif</div>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="m in mobile">{{m.title}}</li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 float-left panel bg-color-darkmarron">
+			<!-- Default panel contents -->
+			<div class="panel-heading color-white">Environnements</div>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="e in environments">{{e.title}}</li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 float-left panel bg-color-blue">
+			<!-- Default panel contents -->
+			<div class="panel-heading color-white">Outils Front-End</div>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="at in angularTools">{{at.title}}</li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 float-left panel bg-color-yellow">
+			<!-- Default panel contents -->
+			<div class="panel-heading color-white">Autres technos</div>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="ot in othersTechnos">{{ot.title}}</li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 float-left panel bg-color-pastelred">
+			<!-- Default panel contents -->
+			<div class="panel-heading color-white">Méthodes</div>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="m in methods">{{m.title}}</li>
+			</ul>
+		</div>
+	</div>
+</div>

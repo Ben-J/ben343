@@ -116,7 +116,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 	    	   },
 	    	   title: 'Loisirs',
 	    	   src: 'img/web_site_img/graphic_design.png',
-	    	   text:'Pour avoir une petite idée de mes loisirs c\'est pas là !',
+	    	   text:'Quelques unes de mes photos pour illustrer quelques loisirs...',
 	    	   active:false
 	       }
 	      ];
@@ -156,7 +156,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 			label: 'Université', 
 			active: false, 
 			textcss: 'goRight',
-			url: '',
+			url: 'projects',
 			text: 'Obtention d\'une licence en Informatique Fondamentale (Universite Paul Sabatier TOULOUSE III) et un master en informatique Développement Logiciel (toujours à l\’UPS de Toulouse).'
 		},
 		 {
@@ -164,14 +164,14 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 			label: 'Orange S.A.', 
 			active: false, 
 			textcss: 'goRight',
-			url: 'orange',
+			url: 'experience_pro',
 			text: 'Stage Développeur-Concepteur. Réalisation d’une application Web à destination des ressources humaines pour aider à la gestion des horaires des employés. Unique développeur...'},
 		 {
 			id:3, 
 			label: 'Thales Group', 
 			active: false, 
 			textcss: 'goRight',
-			url: 'thales',
+			url: 'experience_pro',
 			text: 'Apprentissage Ingénieur Développement Logiciel. Réalisation d\'un composant logiciel JAVA pour l’interopérabilité du nouveau système de gestion et de contrôle du trafic aérien européen 4FLIGHT.'
 		 },
 		 {
@@ -179,7 +179,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 			 label: 'Apside', 
 			 active: false, 
 			 textcss: 'goRight',
-			 url: 'apside',
+			 url: 'experience_pro',
 			 text: 'Ingénieur d\'études – Conception et Développement Logiciel. En assitance technique pendant 2 ans chez Air France. J\'ai eu la chance de développer trois applications web...'},
 		 {
 			 id:5, 
@@ -236,7 +236,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 			$scope.hide = false;
 		};
 		
-		$scope.chartsIntro = "Ci-dessous quelques chiffres qui vous permettront d'avoir une petite idée de mes compétences informatiques. Pour avoir plus de chiffres, vous pouvez également <a ui-sref=\"competences\">cliquer ici</a>.";
+		$scope.chartsIntro = "Voici quelques chiffres qui vous permettront d'avoir une petite idée de mes compétences informatiques. Pour avoir plus de chiffres, n\hésitez pas à ";
 		
 		$scope.charts = 
 			[
@@ -482,37 +482,54 @@ benJControllers.controller('CarouselCtrl', ['$scope', '$http', '$timeout', '$log
 		$state.go('benJ', {}, {reload: true});
 	};
 	
+	
+//	TODO 
+//	Les nouvelles technologies m’enthousiasment également (smartphone, console, etc.).
+	
+	
 	$scope.carouselIndex = 0;
 	$scope.carouselItems = [
 	    {
 	    	active: true,
 	    	title: 'Amsterdam',
 	    	src:'img/FOND_AMSTERDAM_LAC.JPG',
-	    	date: 'vacance mars 2015'
+	    	date: 'vacance mars 2015',
+	    	text:'J\'aime voyager... Amsterdam, île Maurice, île de la Réunion, Espagne, Italie...'
 	    },
 	    {
 	    	active: false,
 	    	title: 'Ile de la réunion',
 	    	src:'img/FOND_BOUCAN.png', 
-	    	date: 'vacance été 2013'
+	    	date: 'vacance été 2013',
+	    	text:'Ma maison'
 	    },
 	    {
 	    	active: false,
 	    	title: 'Lyon',
 	    	src:'img/gerland.JPG', 
-	    	date: 'OL - Saint-Etienne 2015'
+	    	date: 'OL - Saint-Etienne 2015',
+	    	text: 'Passionné de foot, je suis licencié footballeur depuis l’âge de 5 ans. Je fais actuellement du foot en salle (futsal) toutes les semaines.'
 	    },
 	    {
 	    	active: false,
 	    	title: 'Pyrénées',
 	    	src:'img/FOND_FORET_NEIGE.JPG', 
-	    	date: 'vacance hiver 2014'
+	    	date: 'vacance hiver 2014',
+	    	text: ''
 	    },
 	    {
 	    	active: false,
 	    	title: 'Albi',
-	    	src:'img/moto-albi.png', 
-	    	date: 'balade mai 2015'
+	    	src:'img/moto-albi.jpg', 
+	    	date: 'balade mai 2015',
+		    text: 'Les balades en moto avec ma Honda Hornet'
+	    },
+	    {
+	    	active: false,
+	    	title: 'Concert Shaka Ponk',
+	    	src:'img/shaka.JPG', 
+	    	date: 'début 2015',
+	    	text: 'La musique est pour moi essentiel. J’ai suivi pendant 5 ans des cours de piano.'
 	    }
     ];
 	
