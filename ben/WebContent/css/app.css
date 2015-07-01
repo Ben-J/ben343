@@ -87,6 +87,10 @@
   	border-radius: 0px;
 }
 
+.cursor-pointer {
+	cursor: pointer;
+}
+
 .min-height52 { min-height: 52px; }
 .min-height100 { min-height: 100px; }
 .min-height400 { min-height: 400px; }

@@ -16,8 +16,8 @@ app.service('anchorSmoothScroll', function(){
         if (distance < 100) {
             scrollTo(0, stopY); return;
         }
-        var speed = Math.round(distance) * 4;
-        if (speed >= 20) speed = 20;
+        var speed = Math.round(distance) / 50;
+//        if (speed >= 20) speed = 20;
         var step = Math.round(distance / 25);
         var leapY = stopY > startY ? startY + step : startY - step;
         var timer = 0;

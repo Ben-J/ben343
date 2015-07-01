@@ -1,4 +1,5 @@
 <div in-view-container id="work" class="slide" resize>
+	<div in-view="$inview&&setActiveMenu('work')"></div>
 	<h1>
 		{{menu[3].title}}
 	</h1>
@@ -19,4 +20,3 @@
 		<div ng-class="projects[2].css" class="work-slide" ng-include src="'views/home/parts/projects/surf-project.html'"></div>
 	</div>
 </div>
-<div in-view="$inview&&setActiveMenu('work')"></div>

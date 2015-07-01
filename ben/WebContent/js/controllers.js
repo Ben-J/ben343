@@ -27,20 +27,19 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		
 		$scope.goToAnchor = function(x) {
 			var value = $filter('filter')($scope.menu, {id:x})[0].value;
-			$location.hash(value);
 		    anchorSmoothScroll.scrollTo(value);
 		    
-			angular.forEach($scope.menu, function(row) {
-				if(row.id == x) {
-					row.css = 'active';
-				} else {
-					row.css = '';
-				}
-			});
+//			angular.forEach($scope.menu, function(row) {
+//				if(row.id == x) {
+//					row.css = 'active';
+//					
+//				} else {
+//					row.css = '';
+//				}
+//			});
 		};
 		
 		$scope.goTop = function() {
-			$location.hash('hero');
 		    anchorSmoothScroll.scrollTo('hero');
 		    angular.forEach($scope.menu, function(row) {
 				row.css = '';
@@ -76,7 +75,6 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 	       {
 	    	   id: 0,
 	    	   link: function() {
-	    		   	$location.hash('process');
 	   		    	anchorSmoothScroll.scrollTo('process');
 	   		    	angular.forEach($scope.menu, function(row) {
 	   					if(row.id == 2) {
@@ -94,7 +92,6 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 	       {
 	    	   id: 1,
 	    	   link: function() {
-	    			$location.hash('work');
 	   		    	anchorSmoothScroll.scrollTo('work');
 	   		    	angular.forEach($scope.menu, function(row) {
 	   					if(row.id == 3) {
@@ -427,11 +424,9 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 			if($scope.currentQuestion == 0) {
 				$scope.questions[0].css = 'inTransition';
 				$scope.questions[1].css = 'inTransition goRight';
-//				$timeout( function(){$scope.questions[1].css = 'goRight';}, 900);
 			} else {
 				$scope.questions[0].css = 'inTransition goLeft';
 				$scope.questions[1].css = 'inTransition';
-//				$timeout( function(){$scope.questions[0].css = 'goLeft';}, 900);
 			}
 		};
 		
@@ -440,11 +435,9 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 			if($scope.currentQuestion == 0) {
 				$scope.questions[0].css = 'inTransition';
 				$scope.questions[1].css = 'inTransition goRight';
-//				$timeout( function(){$scope.questions[1].css = 'goRight';}, 900);
 			} else {
 				$scope.questions[0].css = 'inTransition goLeft';
 				$scope.questions[1].css = 'inTransition';
-//				$timeout( function(){$scope.questions[0].css = 'goLeft';}, 900);
 			}
 		};
 		
@@ -486,10 +479,7 @@ benJControllers.controller('CarouselCtrl', ['$scope', '$http', '$timeout', '$log
 		$state.go('benJ', {}, {reload: true});
 	};
 	
-	
-//	TODO 
-//	Les nouvelles technologies m’enthousiasment également (smartphone, console, etc.).
-	
+//	TODO Les nouvelles technologies m’enthousiasment également (smartphone, console, etc.).
 	
 	$scope.carouselIndex = 0;
 	$scope.carouselItems = [
