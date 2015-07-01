@@ -4,11 +4,16 @@ var benJControllers = angular.module('SkillControllers', []);
 
 benJControllers.controller('SkillCtrl', ['$scope', '$log',
  	function($scope, $log) {
+	
+		$scope.range = function(i){return i?$scope.range(i-1).concat(i):[]}
 		
 		$scope.getNumber = function(num) {
-			console.log("num : ", num);
-	    	return new Array(num);   
+	    	return $scope.range(num);   
 		};
+		
+		$scope.isSM = function() {
+			return $scope.windowWidth<=767;
+		}
 		
 		$scope.java = 
 		{
@@ -30,7 +35,7 @@ benJControllers.controller('SkillCtrl', ['$scope', '$log',
 			 {
 				 title: 'Java',
 				 type: 'Langage',
-				 stars: '4,5'
+				 stars: '4'
 			 },
 			 {
 				 title: 'HTML, CSS',

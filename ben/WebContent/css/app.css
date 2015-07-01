@@ -24,6 +24,7 @@
 .margin-top50 {	margin-top: 50px; }
 .margin-top60 {	margin-top: 60px; }
 .margin-top70 {	margin-top: 70px; }
+.margin-bottom10 { margin-bottom: 10px; }
 .margin-topm10 { margin-top: -10px; }
 .margin-topm20 { margin-top: -20px; }
 .margin-topm30 { margin-top: -30px; }
@@ -46,6 +47,27 @@
 .bg-color-darkmarron { background-color:#B76A33; }
 
 .color-white { color: white; }
+.color-orange { color: rgb(255, 87, 0); }
+
+.position-absolute {
+	position: absolute;
+}
+
+.display-inline-block {
+	display: inline-block;
+}
+
+.right4percent {
+	right: 4%;
+}
+
+.font-size1.1vw {
+	font-size: 1.1vw;
+}
+
+.topm1 {
+	top: -1px;
+}
 
 .list-group-item {
   padding: 5px 15px;
@@ -65,6 +87,7 @@
   	border-radius: 0px;
 }
 
+.min-height52 { min-height: 52px; }
 .min-height100 { min-height: 100px; }
 .min-height400 { min-height: 400px; }
 .min-height700 { min-height: 700px; }
