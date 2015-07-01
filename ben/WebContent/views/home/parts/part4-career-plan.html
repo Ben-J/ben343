@@ -78,7 +78,7 @@
 
 		<div ng-repeat="c in career" class="explanation" ng-class="c.textcss">
 			{{c.text}}
-			<br><a ng-if="c.url != ''" ui-sref="{{c.url}}">en savoir plus...</a>
+			<br><a ng-if="c.url != ''" ui-sref="{{c.url}}">{{c.urlText}}</a>
 		</div>
 	</div>
 </div>

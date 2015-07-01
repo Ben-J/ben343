@@ -157,6 +157,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 			active: false, 
 			textcss: 'goRight',
 			url: 'projects',
+			urlText: 'Voir quelques projets Universitaire...',
 			text: 'Obtention d\'une licence en Informatique Fondamentale (Universite Paul Sabatier TOULOUSE III) et un master en informatique Développement Logiciel (toujours à l\’UPS de Toulouse).'
 		},
 		 {
@@ -165,6 +166,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 			active: false, 
 			textcss: 'goRight',
 			url: 'experience_pro',
+			urlText: 'en savoir plus...',
 			text: 'Stage Développeur-Concepteur. Réalisation d’une application Web à destination des ressources humaines pour aider à la gestion des horaires des employés. Unique développeur...'},
 		 {
 			id:3, 
@@ -172,6 +174,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 			active: false, 
 			textcss: 'goRight',
 			url: 'experience_pro',
+			urlText: 'en savoir plus...',
 			text: 'Apprentissage Ingénieur Développement Logiciel. Réalisation d\'un composant logiciel JAVA pour l’interopérabilité du nouveau système de gestion et de contrôle du trafic aérien européen 4FLIGHT.'
 		 },
 		 {
@@ -180,6 +183,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 			 active: false, 
 			 textcss: 'goRight',
 			 url: 'experience_pro',
+				urlText: 'en savoir plus...',
 			 text: 'Ingénieur d\'études – Conception et Développement Logiciel. En assitance technique pendant 2 ans chez Air France. J\'ai eu la chance de développer trois applications web...'},
 		 {
 			 id:5, 
