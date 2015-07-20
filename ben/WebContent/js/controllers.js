@@ -28,6 +28,15 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		$scope.goToAnchor = function(x) {
 			var value = $filter('filter')($scope.menu, {id:x})[0].value;
 		    anchorSmoothScroll.scrollTo(value);
+		    
+//			angular.forEach($scope.menu, function(row) {
+//				if(row.id == x) {
+//					row.css = 'active';
+//					
+//				} else {
+//					row.css = '';
+//				}
+//			});
 		};
 		
 		$scope.goTop = function() {
