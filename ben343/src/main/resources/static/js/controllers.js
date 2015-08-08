@@ -4,12 +4,6 @@
 
 var benJControllers = angular.module('benJControllers', []);
 
-benJControllers.controller('GlobalCtrl', ['$scope', '$log',
-	function($scope, $log) {
-		$scope.showFooter = true;
-	}
-]);
-
 benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '$animate', '$state', 
                                         '$location', '$anchorScroll', 'anchorSmoothScroll', '$filter', 'UserService',
     function($scope, $http, $timeout, $log, $animate, $state, $location, $anchorScroll, 
@@ -357,7 +351,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 				 [
 				  {
 					  title: "Quelles technologies sont utilisées pour ben343.fr ?",
-					  text: "Ce site web (~application web) a été développé à l'aide de : angularJS, Node.js, Apache Tomcat. Hébergé sur un serveur Debian. De nombreuses librairies : font-awesome, hammerjs, skrollr, etc. Des outils tels que Npm, bower, gulp, etc."
+					  text: "Ce site web (~application web) a été développé à l'aide de : maven, git, spring (spring-boot-starter- : data-jpa / jdbc / security / web / tomcat...), angularJS, Node.js. Hébergé sur un serveur Debian. De nombreuses librairies : font-awesome, hammerjs, skrollr, etc. Des outils tels que Npm, bower, gulp, etc."
 				  },
 				  {
 					  title: "Quel est ton prénom ?",
@@ -441,9 +435,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 			console.log("not already handled");
 		};
 		
-		$scope.$on('mapInitialized', function(event, map) {
-		      console.log("map");
-		});
+		$scope.$on('mapInitialized', function(event, map) {});
 		/*<- CONTACT */
   	}
 ]);
@@ -516,6 +508,14 @@ benJControllers.controller('CarouselCtrl', ['$scope', '$http', '$timeout', '$log
 	    	src:'img/shaka.JPG', 
 	    	date: 'début 2015',
 	    	text: 'La musique est pour moi essentiel. J’ai suivi pendant 5 ans des cours de piano.'
+	    },
+	    {
+	    	active: false,
+	    	title: 'FIFA Ultimate Team',
+	    	src:'img/fifa.png', 
+	    	date: '2015',
+	    	text: 'J\'aime beaucoup les jeux vidéos. FIFA étant un jeu que j\'affectionne particulièrement.',
+	    	backdoor: true
 	    }
     ];
 	
@@ -525,7 +525,6 @@ benJControllers.controller('CarouselCtrl', ['$scope', '$http', '$timeout', '$log
 		angular.forEach($scope.carouselItems, function(value) {
 			value.active = false;
 		});
-		console.log("item", $scope.carouselItems[current]);
 		$scope.carouselItems[current].active = true;
 	};
 }]);

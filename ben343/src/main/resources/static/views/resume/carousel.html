@@ -7,6 +7,7 @@
 			<div class="navigation-info">
 				<span class="fa fa-calendar-o">&nbsp;&nbsp;{{slide.date}}</span>
 			</div>
+			<button ng-if="slide.backdoor === true" class="backdoor-btn" ui-sref="error"></button>
 			<div class="navigation-camera">
 				<span class="fa fa-camera">&nbsp;&nbsp;{{slide.title}}</span>
 			</div>

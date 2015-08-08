@@ -10,6 +10,7 @@ var benApp = angular.module('benApp', [
   'ngMap',
   'benJControllers',
   'benJResources',
+  'GlobalControllers',
   'ProjectControllers',
   'SkillControllers',
   'benJDirectives',
@@ -62,9 +63,9 @@ benApp.config(['$stateProvider', '$urlRouterProvider',
 		templateUrl: 'views/home/parts/projects/ups-projects.html',
 		controller: 'ProjectCtrl'
 	})
-	.state('todo', {
-		url: '/todo',
-		templateUrl: 'views/todo.html',
+	.state('error', {
+		url: '/error',
+		templateUrl: 'views/error.html',
 		controller: 'GlobalCtrl'
 	});
 	 // For any unmatched url, redirect to /benJ

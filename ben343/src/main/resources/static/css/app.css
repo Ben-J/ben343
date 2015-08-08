@@ -2163,6 +2163,16 @@ body.noAnimation #header {
  	-webkit-transform: translateZ(0px);
 }
 
+.backdoor-btn {
+	position: absolute;
+    top: 40%;
+    right: 27.5%;
+    width: 5%;
+    height: 10%;
+    opacity: 0;
+    cursor: pointer;
+}
+
 /* ------------------------------------------------ */
 /* P I E C H A R T   S T Y L E   
 /* ------------------------------------------------ */
