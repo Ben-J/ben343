@@ -4,8 +4,16 @@
 		data-bottom-top="opacity[swing]:0;transform[swing]:translate(100px, 0%)"
 		data-bottom="opacity[swing]:1;transform[swing]:translate(0px, 0%)"
 		style="opacity: 0; -webkit-transform: translate(100px, 0%); transform: translate(100px, 0%);">
-		<p ng-show="text.paragraph">{{text.content}}</p>
+		<p ng-show="text.paragraph">
+			{{text.content}}
+			<i ng-show="text.amoa === true" class="fa fa-caret-down"></i>
+		</p>
 		<span ng-show="!text.paragraph">{{text.content}}</span>
 		<div class="clearfix"></div>
+		<img ng-show="text.amoa === true" src="img/web_site_img/avatar-af.jpg">
+		<div ng-show="text.amoa === true" class="titles">
+			<h3>Service AMOA</h3>
+			<h4>Air France</h4>
+		</div>
 	</div>
 </div>

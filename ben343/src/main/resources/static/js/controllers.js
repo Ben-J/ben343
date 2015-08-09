@@ -268,7 +268,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 			 text:
 				 [
 				  {paragraph: true, content: 'Application web J2EE - angularJS. Outil de gestion de documents réglementaires AF (édition, diffusion, briefing, statistique)'},
-				  {paragraph: true, content: '"Cette application ne ressemble en rien aux précédentes... son design et son côté intuitif la rendent très symphatique."'},
+				  {paragraph: true, amoa: true, content: '"Cette application ne ressemble en rien aux précédentes... son design et son côté intuitif la rendent très symphatique."'},
 				  {paragraph: false, content: 'Plus de détails, dans l\'espace "Carrière - Apside".'}
 				  ]
 		 },
