@@ -351,7 +351,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 				 [
 				  {
 					  title: "Quelles technologies sont utilisées pour ben343.fr ?",
-					  text: "Ce site web (~application web) a été développé à l'aide de : maven, git, spring (spring-boot-starter- : data-jpa / jdbc / security / web / tomcat...), angularJS, Node.js. Hébergé sur un serveur Debian. De nombreuses librairies : font-awesome, hammerjs, skrollr, etc. Des outils tels que Npm, bower, gulp, etc."
+					  text: "Ce site web (~application web) a été développé à l'aide de : maven, git, spring (spring-boot-starter- : data-jpa / jdbc / security / web / tomcat), angularJS, Node.js, mySQL, etc... Hébergé sur un serveur Debian. De nombreuses librairies : font-awesome, hammerjs, skrollr, etc. Des outils tels que Npm, bower, gulp, etc."
 				  },
 				  {
 					  title: "Quel est ton prénom ?",

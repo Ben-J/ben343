@@ -1,193 +1,30 @@
+<div ng-include src="'views/templates/returnNav.html'"></div>
+<div id="col-xs-12">
+	<div class="col-xs-12">
+		<h2 class="text-center">
+			{{privacy.title}} <strong>www.ben343.fr</strong>
+		</h2>
+		<p class="font-size-12 margin-topm10 text-center">{{privacy.subTitle}}</p>
+		<h3>{{privacy.intro}}</h3>
 
-<!-- <div id="wbars_all"> -->
-<!-- 	<div class="iub_container iub_base_container"> -->
-<!-- 		<div id="wbars"> -->
-<!-- 			<div class="iub_content simple_pp"> -->
-<!-- 				<div class="iub_header"> -->
-<!-- 					<h1> -->
-<!-- 						Politique de confidentialité du <strong>www.ben343.fr</strong> -->
-<!-- 					</h1> -->
-<!-- 					<p>Cette Application collecte certaines Données Personnelles de -->
-<!-- 						ses Utilisateurs.</p> -->
-<!-- 				</div> -->
-<!-- 				<h2>Données Personnelles collectées pour les raisons suivantes -->
-<!-- 					et en utilisant les services suivants:</h2> -->
-<!-- 				<ul class="for_boxes cf"> -->
-<!-- 					<li class="one_line_col"> -->
-<!-- 						<ul class="for_boxes"> -->
-<!-- 							<li> -->
-<!-- 								<div class="iconed policyicon_purpose_16"> -->
-<!-- 									<h3>Accès aux comptes des services tiers</h3> -->
-<!-- 									<ul> -->
-<!-- 										<li> -->
-<!-- 											<h3>Accès au compte Facebook</h3> -->
-<!-- 											<p>Permissions: Accéder aux listes des amis, -->
-<!-- 												Anniversaire, Créer des Évènements, Email de contact, -->
-<!-- 												Localité actuelle, Photos et À mon sujet</p> -->
-<!-- 										</li> -->
-<!-- 										<li> -->
-<!-- 											<h3>Accès au compte Twitter</h3> -->
-<!-- 											<p>Données Personnelles: Divers types de Données figurant -->
-<!-- 												dans la politique de confidentialité du service.</p> -->
-<!-- 										</li> -->
-<!-- 									</ul> -->
-<!-- 								</div> -->
-<!-- 							</li> -->
-<!-- 							<li> -->
-<!-- 								<div class="iconed policyicon_purpose_10"> -->
-<!-- 									<h3>Contacter l'Utilisateur</h3> -->
-<!-- 									<ul> -->
-<!-- 										<li> -->
-<!-- 											<h3>Liste de distribution ou Newsletter</h3> -->
-<!-- 											<p>Données Personnelles: Adresse électronique, Code -->
-<!-- 												postal, Cookie, Date de Naissance, Données d'utilisation, -->
-<!-- 												Nom de famille, Numéro de téléphone, Pays, Profession, -->
-<!-- 												Province, Prénom, Sexe, Ville et État</p> -->
-<!-- 										</li> -->
-<!-- 									</ul> -->
-<!-- 								</div> -->
-<!-- 							</li> -->
-<!-- 							<li> -->
-<!-- 								<div class="iconed policyicon_purpose_9"> -->
-<!-- 									<h3>Inscription et authentification</h3> -->
-<!-- 									<ul> -->
-<!-- 										<li> -->
-<!-- 											<h3>Twitter OAuth</h3> -->
-<!-- 											<p>Données Personnelles: Divers types de Données figurant -->
-<!-- 												dans la politique de confidentialité du service.</p> -->
-<!-- 										</li> -->
-<!-- 									</ul> -->
-<!-- 								</div> -->
-<!-- 							</li> -->
-<!-- 						</ul> -->
-<!-- 					</li> -->
-<!-- 				</ul> -->
-<!-- 				<h2>Coordonnées</h2> -->
-<!-- 				<ul class="for_boxes cf"> -->
-<!-- 					<li class="one_line_col"> -->
-<!-- 						<ul class="for_boxes"> -->
-<!-- 							<li> -->
-<!-- 								<div class="iconed icon_owner"> -->
-<!-- 									<h3>Propriétaire</h3> -->
-<!-- 									<p> -->
-<!-- 										Saint-Cyprien 31000 Toulouse (France), -->
-<!-- 										bubblespirit343@gmail.com -->
-<!-- 										<script cf-hash="f9e31" type="text/javascript"> -->
-// 											/* <![CDATA[ */!function() {
-// 												try {
-// 													var t = "currentScript" in document ? document.currentScript
-// 															: function() {
-// 																for (var t = document
-// 																		.getElementsByTagName("script"), e = t.length; e--;)
-// 																	if (t[e]
-// 																			.getAttribute("cf-hash"))
-// 																		return t[e]
-// 															}();
-// 													if (t && t.previousSibling) {
-// 														var e, r, n, i, c = t.previousSibling, a = c
-// 																.getAttribute("data-cfemail");
-// 														if (a) {
-// 															for (
-// 																	e = "",
-// 																	r = parseInt(
-// 																			a
-// 																					.substr(
-// 																							0,
-// 																							2),
-// 																			16),
-// 																	n = 2; a.length
-// 																	- n; n += 2)
-// 																		i = parseInt(
-// 																				a
-// 																						.substr(
-// 																								n,
-// 																								2),
-// 																				16)
-// 																				^ r,
-// 																		e += String
-// 																				.fromCharCode(i);
-// 																	e = document
-// 																			.createTextNode(e),
-// 																	c.parentNode
-// 																			.replaceChild(
-// 																					e,
-// 																					c)
-// 														}
-// 													}
-// 												} catch (u) {
-// 												}
-// 											}();/* ]]> */
-<!-- 										</script> -->
-<!-- 									</p> -->
-<!-- 								</div> -->
-<!-- 							</li> -->
-<!-- 						</ul> -->
-<!-- 					</li> -->
-<!-- 				</ul> -->
-<!-- 				<div class="iub_footer"> -->
-<!-- 					<p>Dernière mise à jour: 23 Juin 2015</p> -->
-<!-- 					<p> -->
-<!-- 						<a href="//www.iubenda.com" -->
-<!-- 							title="iubenda – Générateur de Politique de Confidentialité" -->
-<!-- 							target="_blank">iubenda</a> héberge la présente page et <a -->
-<!-- 							href="//www.iubenda.com/privacy-policy/877900" target="_blank">des -->
-<!-- 							Données Personnelles </a> sur les utilisateurs. -->
-<!-- 					</p> -->
-<!-- 					<a href="//www.iubenda.com/privacy-policy/180421/legal" -->
-<!-- 						title="Montrer la politique de confidentialité en entier" -->
-<!-- 						class="show_comp_link iframe-preserve an-preserve">Montrer la -->
-<!-- 						politique de confidentialité en entier</a> -->
-<!-- 				</div> -->
-<!-- 				<script type="text/javascript"> -->
-// 					function tryFunc(fName, args) {
-// 						if (typeof window[fName] === 'function') {
-// 							window[fName](args);
-// 						} else {
-// 							if (args) {
-// 								// default behaviour is link
-// 								if (args.href) {
-// 									// default link is target='_blank'
-// 									window.open(args.href)
-// 								}
-// 							}
-// 						}
-// 						return false; // inhibit default behaviour
-// 					}
-<!-- 				</script> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-<!-- </div> -->
-<!-- <script type="text/javascript"> -->
-// 	var privacyPolicy = new PrivacyPolicy({
-// 		id : 354330,
-// 		noBrand : false
-// 	})
-
-// 	$(document).ready(
-// 			function() {
-
-// 				privacyPolicy.start();
-
-// 				$(".expand-content").hide();
-// 				$(".expand").addClass("collapsed");
-// 				$(".expand .expand-click")
-// 						.click(
-// 								function() {
-// 									$(this).parents(".expand").toggleClass(
-// 											"collapsed");
-// 									$(this).parents(".expand").toggleClass(
-// 											"expanded");
-// 									$(this).parents(".expand-item")
-// 											.toggleClass("hover");
-// 									$(this).children('.icon-17').toggleClass(
-// 											"icon-expand");
-// 									$(this).children('.icon-17').toggleClass(
-// 											"icon-collapse");
-// 									$(this).parents('.expand').children(
-// 											'.expand-content').slideToggle(
-// 											"fast");
-// 								});
-
-// 			});
-<!-- </script> -->
+		<div class="col-xs-12 col-sm-8">
+			<div class="col-xs-12 col-sm-6" ng-repeat=" p in privacy.data">
+				<h4><i class="fa fa-circle font-size-11"></i>&nbsp;&nbsp;{{p.title}}</h4>
+				<p ng-if="!!p.content">{{p.content}}</p>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4 panel panel-default">
+			<div class="col-xs-12 panel-heading">
+				<h2>{{coordinate.title}}</h2>
+			</div>
+			<div class="col-xs-12 panel-body">
+				<h3>{{coordinate.property}}</h3>
+				<p>{{coordinate.address}}</p>
+				<p>{{lastUpdate}}</p>
+				<a href="//www.iubenda.com/privacy-policy/180421/legal"
+					title="Montrer la politique de confidentialité en entier" class="">
+					{{goFuther}} </a>
+			</div>
+		</div>
+	</div>
+</div>

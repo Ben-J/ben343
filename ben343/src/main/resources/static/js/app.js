@@ -51,7 +51,7 @@ benApp.config(['$stateProvider', '$urlRouterProvider',
 	.state('privacy', {
 		url: '/privacy',
 		templateUrl: 'views/privacy/privacy.html',
-		controller: 'GlobalCtrl'
+		controller: 'PrivacyCtrl'
 	})
 	.state('skills', {
 		url: '/skills',
