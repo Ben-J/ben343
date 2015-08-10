@@ -352,7 +352,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 				  },
 				  {
 					  title: "Quelles sont tes principaux loisirs ?",
-					  text: "Je suis à l'affût des nouvelles technologies de manière générale. Je suis sportif, je fais principalement du foot. J'ai été licencié footballeur pendant plus de 15 ans à l'île de la réunion. Je fais actuellement du futsal toutes les semaines... Je possède également une Honda Hornet 600 avec laquelle j'entreprends quelques balades le week-end."
+					  text: "Je suis à l'affût des nouvelles technologies. Je suis sportif, je fais principalement du foot. J'ai été licencié footballeur pendant plus de 15 ans à l'île de la réunion. Je fais actuellement du futsal toutes les semaines... Je possède également une Honda Hornet 600 avec laquelle j'entreprends quelques balades le week-end."
 				  },
 				  {
 					  title: "Quel développeur es-tu ?",
@@ -360,7 +360,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 				  },
 				  {
 					  title: "Es-tu un geek ?",
-					  text: "Geek ? Oui je le suis un peu... forcement. J'aime les jeux vidéos et les jeux de réflexions. Mais au-delà de ça je joue parce que j’y trouve un intérêt, ce n’est pas seulement pour le plaisir de jouer. J'aime à dire que le cerveau est un muscle et jouer c'est le soumettre à un stimuli pour éviter qu'il s’atrophie. Par je leu j'entraîne donc ma mémoire, mes réflexes et ma vigilance. (Dernier jeu joué : The Witcher 3 - PS4)"
+					  text: "Geek ? Oui je le suis un peu... forcement. J'aime les jeux vidéos et les jeux de réflexions. Mais au-delà de ça je joue parce que j’y trouve un intérêt, ce n’est pas seulement pour le plaisir de jouer. J'aime à dire que le cerveau est un muscle et jouer c'est le soumettre à un stimuli pour éviter qu'il s’atrophie. Par le jeu j'entraîne donc ma mémoire, mes réflexes et ma vigilance. (Dernier jeu joué : The Witcher 3 - PS4)"
 				  }
 				 ]
 		 },
@@ -371,11 +371,11 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 				 [
 				  {
 					  title: "Pourrais-tu m'aider ?",
-					  text: "Si tu as des questions à me poser concernant ce site web, si tu souhaites développer un site ou une application web et que tu aimerais utiliser un de mes composants graphiques, si tu veux télécharger mes différents rapports de projets (Orange S.A et Thales Air Systems), si tu veux discuter de mes loisirs (foot, moto, nouvelles technologies), si tu veux discuter de ma carrière, alors n'hésites pas à <a href='#contact'>me contacter</a>. Si tu as un projet web en tête et que tu te poses des questions sur : les technologies à utiliser ? l'architecture à mettre en place ? le temps de développement ? le côut de développement ? alors ici aussi, n'hésites pas à <a href='#contact'>me contacter</a>."
+					  text: "Si tu as des questions à me poser concernant ce site web, si tu souhaites développer un site ou une application web et que tu aimerais utiliser un de mes composants graphiques, si tu veux télécharger mes différents rapports de projets (Orange S.A et Thales Air Systems), si tu veux discuter de mes loisirs (foot, moto, nouvelles technologies), si tu veux discuter de ma carrière, alors n'hésites pas à me contacter. Si tu as un projet web en tête et que tu te poses des questions sur : les technologies à utiliser ? l'architecture à mettre en place ? le temps de développement ? le côut de développement ? alors ici aussi, n'hésites pas à me contacter."
 				  },
 				  {
 					  title: "As-tu une vie associative ?",
-					  text: "En parallèle de mes activités personnelles et professionnelles, je me suis engagé dans des associations. En effet, j'ai été pendant 2 ans responsable du pôle évènements de l'association des anciens élèves du master Développement Logiciel (association M2DL) de l'Université Paul Sabatier III. <a href='m2dl' target='_blank'>(site de l'association)</a>. Je suis également engagé depuis plus de dix ans dans l'association France Alzheimer Réunion. Pour plus de détails sur mon engagement, vous pouvez consulter <a href='associationFAR' target='_blank'>cette page</a>."
+					  text: "En parallèle de mes activités personnelles et professionnelles, je me suis engagé dans des associations. En effet, j'ai été pendant 2 ans responsable du pôle évènements de l'association des anciens élèves du master Développement Logiciel (association M2DL) de l'Université Paul Sabatier III. Je suis également engagé depuis plus de dix ans dans l'association France Alzheimer Réunion. Pour plus de détails sur cet engagement vous pouvez consulter la paga carrière."
 				  },
 				  {
 					  title: "Quelques technos pour développer une web app ?",
@@ -558,7 +558,7 @@ benJControllers.controller('ExperienceCtrl', ['$scope', '$log', '$state',
 		});
 		
 		$scope.goToMenu = function() {
-			$state.go("benJ", {}, {reload: true});
+  			$state.go("benJ", {'#':'process'}, {reload: true});
 		};
 		
 	  	$scope.apsideDip = {
