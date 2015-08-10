@@ -14,6 +14,8 @@
 .font-size-17 {	font-size: 17px; }
 .font-size-18 {	font-size: 18px; }
 
+.font-italic { font-style: italic; }
+
 .margin-topm20 { margin-top: -20px; }
 .margin-topm10 { margin-top: -10px; }
 .margin-top0 { margin-top: 0px; }
@@ -51,6 +53,7 @@
 
 .color-white { color: white; }
 .color-orange { color: rgb(255, 87, 0); }
+.color-grey { color: #969696; }
 
 .position-absolute {
 	position: absolute;
