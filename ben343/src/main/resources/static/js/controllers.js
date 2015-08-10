@@ -520,6 +520,10 @@ benJControllers.controller('CarouselCtrl', ['$scope', '$http', '$timeout', '$log
 		});
 		$scope.carouselItems[current].active = true;
 	};
+	
+	$scope.goToAccueil = function() {
+		$state.go("benJ", {'#':'services'}, {reload: true});
+	};
 }]);
 
 benJControllers.controller('CvCtrl', ['$scope', '$log',

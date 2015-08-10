@@ -2,8 +2,8 @@
 
 var benJControllers = angular.module('SkillControllers', []);
 
-benJControllers.controller('SkillCtrl', ['$scope', '$log',
- 	function($scope, $log) {
+benJControllers.controller('SkillCtrl', ['$scope', '$log', '$state',
+ 	function($scope, $log, $state) {
 	
 		$scope.range = function(i){return i?$scope.range(i-1).concat(i):[]}
 		
@@ -269,5 +269,9 @@ benJControllers.controller('SkillCtrl', ['$scope', '$log',
 				 stars: '3'
 			 }
 			 ];
+		
+		$scope.goToAccueil = function() {
+			$state.go("benJ", {'#':'founders'});
+		};
  	}
  ]);
