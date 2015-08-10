@@ -27,6 +27,7 @@
 .margin-top70 {	margin-top: 70px; }
 .margin-bottomm10 { margin-bottom: -10px; }
 .margin-bottom10 { margin-bottom: 10px; }
+.margin-bottom50 { margin-bottom: 50px; }
 .margin-topm10 { margin-top: -10px; }
 .margin-topm20 { margin-top: -20px; }
 .margin-topm30 { margin-top: -30px; }
@@ -437,6 +438,7 @@ body.noAnimation #header {
 
 #founders h1 {
 	color: white;
+	margin: 1em 0 1em;
 }
 
 #founders h5 {

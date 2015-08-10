@@ -13,7 +13,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		$scope.menu = 
 		[
 		 {id: 0, menuTitle:'Accueil', 		title:'Présentation', 		value:'services', 	css:''},
-		 {id: 1, menuTitle:'Compétences',	title:'Compétences',	 	value:'founders',	css:''},
+		 {id: 1, menuTitle:'Compétences',	title:'Quelques compétences',value:'founders',	css:''},
 		 {id: 2, menuTitle:'Carrière', 		title:'Ma Carrière', 		value:'process', 	css:''},
 		 {id: 3, menuTitle:'Projets',		title:'Projets',			value:'work',  		css:''},
 		 {id: 4, menuTitle:'FAQ', 			title:'FAQ', 				value:'faq', 		css:''},
@@ -215,15 +215,8 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		/*<- CAREER PLAN */
 		
 		/* DIVERS ->*/
-		$scope.video = {title: 'Ma dernière video'};
-		$scope.hide = true;
-		$scope.playVideo = function() {
-			$scope.stream = document.getElementById('theVideo');
-			$scope.stream.play();
-			$scope.hide = false;
-		};
-		
-		$scope.chartsIntro = "Voici quelques chiffres qui vous permettront d'avoir une petite idée de mes compétences informatiques. Pour avoir plus de chiffres, n\hésitez pas à ";
+		$scope.chartsTitle = "Quelques compétences";
+		$scope.chartsIntro = "Voici quelques chiffres qui vous permettront d'avoir une petite idée de mes compétences informatiques. Pour avoir plus de chiffres, n\'hésitez pas à ";
 		
 		$scope.charts = 
 			[
