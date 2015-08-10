@@ -58,7 +58,7 @@ benJControllers.controller('PrivacyCtrl', ['$scope', '$log', '$state',
   		$scope.goFuther = 'Voir la politique de confidentialité en entier';
   		
   		$scope.goToMenu = function() {
-  			$state.go('benJ', {}, {reload: true});
+  			$state.go("benJ", {'#':'privacy'}, {reload: true});
   		};
   	}
   ]);
