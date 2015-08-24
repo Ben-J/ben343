@@ -6,21 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import ben343.entities.User;
-import ben343.repositories.UserRepository;
+import ben343.entities.UserApp;
+import ben343.repositories.UserAppRepository;
 
 @Component
 public class UserInitializationCheck implements CommandLineRunner {
 
 	@Autowired
-	private UserRepository userRepo;
+	private UserAppRepository userRepo;
 
 	@Override
 	public void run(String... arg0) throws Exception {
-		List<User> users = (List<User>) userRepo.findAll();
+		List<UserApp> users = (List<UserApp>) userRepo.findAll();
 
 		if (users != null) {
-			for (User u : users) {
+			for (UserApp u : users) {
 				System.err.println("User " + u.toString());
 			}
 		}

@@ -170,11 +170,11 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 			 text: 'Ingénieur d\'études – Conception et Développement Logiciel. En assitance technique pendant 2 ans chez Air France. J\'ai eu la chance de développer trois applications web...'},
 		 {
 			 id:5, 
-			 label: 'Astek', 
+			 label: 'Thales Group', 
 			 active: false, 
 			 textcss: 'goRight',
 			 url: '',
-			 text: 'Ingénieur d\'études et de développement. En mission pour Thales Avionics et Air France afin de développer des applications destinées aux pilotes.'}
+			 text: 'Ingénieur développement logiciel. En mission pour Thales Services...'}
 		 ];
 		
 		$scope.currentSchoolPart = 0;
@@ -344,7 +344,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 				 [
 				  {
 					  title: "Quelles technologies sont utilisées pour ben343.fr ?",
-					  text: "Ce site web (~application web) a été développé à l'aide de : maven, git, spring (spring-boot-starter- : data-jpa / jdbc / security / web / tomcat), angularJS, Node.js, mySQL, etc... Hébergé sur un serveur Debian. De nombreuses librairies : font-awesome, hammerjs, skrollr, etc. Des outils tels que Npm, bower, gulp, etc."
+					  text: "Ce site web (~application web) a été développé à l'aide de : maven, git, spring (spring-boot-starter- : data-jpa / jdbc / security / web / tomcat), angularJS, mySQL, etc. De nombreuses librairies JS : font-awesome, hammerjs, skrollr, etc. Ce site est hébergé sur un serveur Debian. "
 				  },
 				  {
 					  title: "Quel est ton prénom ?",
@@ -356,7 +356,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 				  },
 				  {
 					  title: "Quel développeur es-tu ?",
-					  text: "J'ai conçu et développé de nombreux logiciels : des sites web, des applications web, des applications mobile, des applications bureautique, et pleins d'autres choses. Je ne me restreins pas à un langage ou à une technologie même si je ne vous cache pas que j'ai une petite préférence pour la conception et le développement de composant/logiciel JAVA. Ce genre de projet où la technique est primordiale."
+					  text: "Au cours de ma jeune carrière, j'ai pû concevoir et développer de nombreux logiciels : des sites web, des applications web, des applications mobile, des applications bureautique, des jeux, etc. Je ne me restreins à aucun langage ou à aucune technologie même si j'ai quand même une petite préférence pour la conception et le développement de composants/logiciels critriques JAVA. Le genre de projet pour lesquels les maths et les algos sont primordiaux."
 				  },
 				  {
 					  title: "Es-tu un geek ?",
@@ -371,11 +371,11 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 				 [
 				  {
 					  title: "Pourrais-tu m'aider ?",
-					  text: "Si tu as des questions à me poser concernant ce site web, si tu souhaites développer un site ou une application web et que tu aimerais utiliser un de mes composants graphiques, si tu veux télécharger mes différents rapports de projets (Orange S.A et Thales Air Systems), si tu veux discuter de mes loisirs (foot, moto, nouvelles technologies), si tu veux discuter de ma carrière, alors n'hésites pas à me contacter. Si tu as un projet web en tête et que tu te poses des questions sur : les technologies à utiliser ? l'architecture à mettre en place ? le temps de développement ? le côut de développement ? alors ici aussi, n'hésites pas à me contacter."
+					  text: "Si tu as des questions à me poser concernant ce site web, si tu souhaites développer un site ou une application web et que tu aimerais utiliser un de mes composants graphiques, si tu veux télécharger mes différents rapports de projets (Orange S.A et Thales Air Systems), si tu veux discuter de mes loisirs (foot, moto, nouvelles technologies), si tu veux discuter de ma carrière, alors n'hésites pas à me contacter. Si tu as un projet web en tête et que tu te poses des questions sur : les technologies à utiliser ? l'architecture à mettre en place ? le temps de développement ? le côut de développement ? alors là aussi, n'hésites pas à me contacter."
 				  },
 				  {
 					  title: "As-tu une vie associative ?",
-					  text: "En parallèle de mes activités personnelles et professionnelles, je me suis engagé dans des associations. En effet, j'ai été pendant 2 ans responsable du pôle évènements de l'association des anciens élèves du master Développement Logiciel (association M2DL) de l'Université Paul Sabatier III. Je suis également engagé depuis plus de dix ans dans l'association France Alzheimer Réunion. Pour plus de détails sur cet engagement vous pouvez consulter la paga carrière."
+					  text: "En parallèle de mes activités personnelles et professionnelles, je me suis engagé dans des associations. En effet j'ai été pendant 2 ans responsable du pôle évènements de l'association des anciens élèves du master Développement Logiciel (association M2DL) de l'Université Paul Sabatier III. Je suis également engagé depuis plus de dix ans dans l'association France Alzheimer Réunion. Pour plus de détails sur cet engagement vous pouvez consulter la paga carrière."
 				  },
 				  {
 					  title: "Quelques technos pour développer une web app ?",

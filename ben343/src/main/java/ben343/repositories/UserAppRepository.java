@@ -4,10 +4,10 @@ import javax.transaction.Transactional;
 
 import org.springframework.data.repository.CrudRepository;
 
-import ben343.entities.User;
+import ben343.entities.UserApp;
 
 @Transactional
-public interface UserRepository extends CrudRepository<User, Long> {
+public interface UserAppRepository extends CrudRepository<UserApp, Long> {
 
   /**
    * This method is not implemented and its working code will be
@@ -16,6 +16,6 @@ public interface UserRepository extends CrudRepository<User, Long> {
    * @param email the user email.
    * @return the user having the passed email or null if no user is found.
    */
-  public User findByEmail(String email);
+  public UserApp findByEmail(String email);
 
 } // class UserDao

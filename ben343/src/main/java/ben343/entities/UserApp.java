@@ -8,8 +8,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "USERAPP")
+public class UserApp {
 
 	// ------------------------
 	// PRIVATE FIELDS
@@ -32,14 +32,14 @@ public class User {
 	// PUBLIC METHODS
 	// ------------------------
 
-	public User() {
+	public UserApp() {
 	}
 
-	public User(long id) {
+	public UserApp(long id) {
 		this.id = id;
 	}
 
-	public User(String email, String name) {
+	public UserApp(String email, String name) {
 		this.email = email;
 		this.name = name;
 	}

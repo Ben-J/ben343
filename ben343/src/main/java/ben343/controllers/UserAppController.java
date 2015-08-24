@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import ben343.entities.User;
-import ben343.repositories.UserRepository;
+import ben343.entities.UserApp;
+import ben343.repositories.UserAppRepository;
 
 @RestController
-public class UserController {
+public class UserAppController {
 	// ------------------------
 	// PRIVATE FIELDS
 	// ------------------------
 	
 	@Autowired
-	private UserRepository userRepo;
+	private UserAppRepository userAppRepo;
 
 	// ------------------------
 	// PUBLIC METHODS
@@ -35,10 +35,10 @@ public class UserController {
 	@RequestMapping("/create")
 	@ResponseBody
 	public String create(String email, String name) {
-		User user = null;
+		UserApp user = null;
 		try {
-			user = new User(email, name);
-			userRepo.save(user);
+			user = new UserApp(email, name);
+			userAppRepo.save(user);
 		} catch (Exception ex) {
 			return "Error creating the user: " + ex.toString();
 		}
@@ -56,8 +56,8 @@ public class UserController {
 	@ResponseBody
 	public String delete(long id) {
 		try {
-			User user = new User(id);
-			userRepo.delete(user);
+			UserApp user = new UserApp(id);
+			userAppRepo.delete(user);
 		} catch (Exception ex) {
 			return "Error deleting the user:" + ex.toString();
 		}
@@ -76,7 +76,7 @@ public class UserController {
 	public String getByEmail(String email) {
 		String userId;
 		try {
-			User user = userRepo.findByEmail(email);
+			UserApp user = userAppRepo.findByEmail(email);
 			userId = String.valueOf(user.getId());
 		} catch (Exception ex) {
 			return "User not found";
@@ -100,10 +100,10 @@ public class UserController {
 	@ResponseBody
 	public String updateUser(long id, String email, String name) {
 		try {
-			User user = userRepo.findOne(id);
+			UserApp user = userAppRepo.findOne(id);
 			user.setEmail(email);
 			user.setName(name);
-			userRepo.save(user);
+			userAppRepo.save(user);
 		} catch (Exception ex) {
 			return "Error updating the user: " + ex.toString();
 		}
@@ -111,7 +111,7 @@ public class UserController {
 	}
 
 	@RequestMapping("/users")
-	public List<User> findAll() {
-		return (List<User>) userRepo.findAll();
+	public List<UserApp> findAll() {
+		return (List<UserApp>) userAppRepo.findAll();
 	}
 }
