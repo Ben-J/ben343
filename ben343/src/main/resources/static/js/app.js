@@ -5,6 +5,7 @@
 var benApp = angular.module('benApp', [
   'angular-carousel',
   'ui.router',
+  'ui.select',
   'angular-inview',
   'ngSanitize',
   'ngMap',
@@ -12,6 +13,7 @@ var benApp = angular.module('benApp', [
   'benJResources',
   'GlobalControllers',
   'ProjectControllers',
+  'FifaControllers',
   'SkillControllers',
   'benJDirectives',
   'benJServices',
@@ -62,6 +64,11 @@ benApp.config(['$stateProvider', '$urlRouterProvider',
 		url: '/projects',
 		templateUrl: 'views/home/parts/projects/ups-projects.html',
 		controller: 'ProjectCtrl'
+	})
+	.state('fifaCup', {
+		url: '/fifaCup',
+		templateUrl: 'views/fifa/fifaCup.html',
+		controller: 'FifaCtrl'
 	})
 	.state('error', {
 		url: '/error',

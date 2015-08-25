@@ -1,10 +1,14 @@
 var benJControllers = angular.module('ProjectControllers', []);
 
-benJControllers.controller('ProjectCtrl', ['$scope', '$log',
-	function($scope, $log) {
+benJControllers.controller('ProjectCtrl', ['$scope', '$log', '$state',
+	function($scope, $log, $state) {
 		$scope.project = {
 				title: 'Projets Universitaires',
 				subtitle: 'Juste... quelques projets'
+		};
+		
+		$scope.goToAccueil = function() {
+			$state.go("benJ", {'#':'process'});
 		};
 		
 		$scope.projects = 

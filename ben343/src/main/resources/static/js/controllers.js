@@ -4,11 +4,10 @@
 
 var benJControllers = angular.module('benJControllers', []);
 
-benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '$animate', '$state', 
-                                        '$location', '$anchorScroll', 'anchorSmoothScroll', '$filter', 'UserService',
-    function($scope, $http, $timeout, $log, $animate, $state, $location, $anchorScroll, 
-    		anchorSmoothScroll, $filter, UserService) {
-
+benJControllers.controller('HomeCtrl', ['$scope', '$log', '$state', '$location', 'anchorSmoothScroll', '$q',
+                                        '$filter', 'UserService', 'MessageService',
+    function($scope, $log, $state, $location, anchorSmoothScroll, $q, $filter, UserService, MessageService) {
+		var init = $q.defer();
 		/* MENU ->*/
 		$scope.menu = 
 		[
@@ -19,10 +18,16 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		 {id: 4, menuTitle:'FAQ', 			title:'FAQ', 				value:'faq', 		css:''},
 		 {id: 5, menuTitle:'Contact', 		title:'Contact', 			value:'contact',  	css:''}
 		 ];
-		
-		$scope.goToAnchor = function(x) {
-			var value = $filter('filter')($scope.menu, {id:x})[0].value;
-		    anchorSmoothScroll.scrollTo(value);
+		$scope.isInit = false;
+		$scope.goToAnchor = function(value) {
+			if($scope.isInit === true) {
+				// set the location.hash to the id of
+				// the element you wish to scroll to.
+//				$location.hash(value);
+				
+				// call $anchorScroll()
+				anchorSmoothScroll.scrollTo(value);
+			} 
 		};
 		
 		$scope.goTop = function() {
@@ -40,9 +45,6 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 					row.css = '';
 				}
 			});
-			if($scope.stream != null || $scope.stream != undefined) {
-				$scope.stream.pause();
-			}
 		};
 		/*<- MENU */
 		
@@ -61,14 +63,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 	       {
 	    	   id: 0,
 	    	   link: function() {
-	   		    	anchorSmoothScroll.scrollTo('process');
-	   		    	angular.forEach($scope.menu, function(row) {
-	   					if(row.id == 2) {
-	   						row.css = 'active';
-	   					} else {
-	   						row.css = '';
-	   					}
-	   				});
+	    		   $scope.goToAnchor('work');
 	    	   },
 	    	   title: 'Carrière',
 	    	   src: 'img/web_site_img/wireframing.png',
@@ -78,14 +73,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 	       {
 	    	   id: 1,
 	    	   link: function() {
-	   		    	anchorSmoothScroll.scrollTo('work');
-	   		    	angular.forEach($scope.menu, function(row) {
-	   					if(row.id == 3) {
-	   						row.css = 'active';
-	   					} else {
-	   						row.css = '';
-	   					}
-	   				});
+	    		   $scope.goToAnchor('process');
 	    	   },
 	    	   title: 'Projets',
 	    	   src: 'img/web_site_img/app_development.png',
@@ -423,20 +411,28 @@ benJControllers.controller('HomeCtrl', ['$scope', '$http', '$timeout', '$log', '
 		/*<- FAQ */
 		
 		/* CONTACT ->*/
-		
+		$scope.message = {name:'', email:'', content:''};
 		$scope.sendEmail = function() {
-			console.log("not already handled");
+			$scope.message.date = new Date();
+			console.log("not already handled : ", $scope.message);
+			MessageService.create({}, $scope.message, function(success) {
+				$scope.message = {name:'', email:'', content:''};
+			});
 		};
 		
 		$scope.$on('mapInitialized', function(event, map) {});
 		/*<- CONTACT */
+		
+		init.resolve();
+		$q.all([init]).then(function(values) {        
+                $scope.isInit = true;
+                return values;
+        });
   	}
 ]);
 
-benJControllers.controller('CarouselCtrl', ['$scope', '$http', '$timeout', '$log', '$animate', '$state', 
-                                        '$location', '$anchorScroll', 'anchorSmoothScroll', '$filter',
-    function($scope, $http, $timeout, $log, $animate, $state, $location, $anchorScroll, 
-    		anchorSmoothScroll, $filter) {
+benJControllers.controller('CarouselCtrl', ['$scope', '$log', '$state',
+    function($scope, $log, $state) {
 
 	skrollr.init({
 		constants: {

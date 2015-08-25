@@ -5,11 +5,11 @@
 		<div class="left">
 			<form>
 				<label>Nom:</label> 
-				<input type="text" placeholder="Nom" value="" class="name">
+				<input type="text" placeholder="Nom" value="" class="name" ng-model="message.name">
 				<label>Email:</label>
-				<input type="text" placeholder="Email" value="" class="email">
+				<input type="text" placeholder="Email" value="" class="email" ng-model="message.email">
 				<label>Message:</label>
-				<textarea placeholder="Message" class="message"></textarea>
+				<textarea placeholder="Message" class="message" ng-model="message.content"></textarea>
 				<input class="send work-style" type="submit" value="Envoyer" hm-tap="sendEmail()">
 			</form>
 			<div class="response"></div>

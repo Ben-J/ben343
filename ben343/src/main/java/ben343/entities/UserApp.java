@@ -72,5 +72,4 @@ public class UserApp {
 		return "[" + id + "] " + name + " - mail : " + email;
 
 	}
-
 }

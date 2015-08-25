@@ -11,7 +11,7 @@
 	</a>`
 	<nav>
 		<span ng-repeat="m in menu"> 
-			<a class="cursor-pointer" ng-class="{{'m.css'}}" ng-click="goToAnchor({{m.id}})">
+			<a class="cursor-pointer" ng-class="{{'m.css'}}" ng-click="goToAnchor('{{m.value}}')">
 					{{m.menuTitle}}
 			</a>
 		</span>
@@ -37,14 +37,14 @@
 	<div id="footer">
 		<div class="wrapper">
 			<div class="column1">
-				<a ng-click="goToAnchor(0)">Accueil</a><br>
-				<a ng-click="goToAnchor(1)">Quelques chiffres</a><br>
-				<a ng-click="goToAnchor(2)">Plan de carrière</a><br>
-				<a ng-click="goToAnchor(3)">Quelques projets</a><br>
+				<a ng-click="goToAnchor('services')">{{menu[0].title}}</a><br>
+				<a ng-click="goToAnchor('founders')">{{menu[1].title}}</a><br>
+				<a ng-click="goToAnchor('process')">{{menu[2].title}}</a><br>
+				<a ng-click="goToAnchor('work')">{{menu[3].title}}</a><br>
 			</div>
 			<div class="column2">
-				<a ng-click="goToAnchor(4)">FAQ</a><br>
-				<a ng-click="goToAnchor(5)">CONTACT</a><br>
+				<a ng-click="goToAnchor('faq')">{{menu[4].title}}</a><br>
+				<a ng-click="goToAnchor('contact')">{{menu[5].title}}</a><br>
 			</div>
 			<div class="media">
 				<a class="fa fa-github" href="https://github.com/Ben-J" target="blank"></a>

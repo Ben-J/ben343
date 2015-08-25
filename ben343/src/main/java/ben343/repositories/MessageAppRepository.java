@@ -1,21 +1,23 @@
 package ben343.repositories;
 
+import java.util.Date;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.repository.CrudRepository;
 
-import ben343.entities.UserApp;
+import ben343.entities.MessageApp;
 
 @Transactional
-public interface UserAppRepository extends CrudRepository<UserApp, Long> {
+public interface MessageAppRepository extends CrudRepository<MessageApp, Long> {
 
   /**
    * This method is not implemented and its working code will be
    * automagically generated from its signature by Spring Data JPA.
    *
-   * @param email the user email.
-   * @return the user having the passed email or null if no user is found.
+   * @param date
+   * @return the message having the passed date.
    */
-  public UserApp findByEmail(String email);
+  public MessageApp findByDate(Date date);
 
-} // class UserApp Dao
+} // class Message Dao
