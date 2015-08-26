@@ -1,8 +1,11 @@
 package ben343.controllers;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,15 +35,16 @@ public class MessageAppController {
 	 * @return A string describing if the message is successfully created or
 	 *         not.
 	 */
-	@RequestMapping("/addMessage")
+	@RequestMapping(method = RequestMethod.PUT, value = "/addMessage")
 	@ResponseBody
-	public String create(@RequestBody MessageApp msg) {
+	public boolean create(@RequestBody MessageApp msg) {
+		msg.setDate(new Date());
 		try {
 			messageAppRepo.save(msg);
 		} catch (Exception ex) {
-			return "Error creating the message: " + ex.toString();
+			return false;
 		}
-		return "Message succesfully created! (id = " + msg.getId() + ")";
+		return true;
 	}
 
 }

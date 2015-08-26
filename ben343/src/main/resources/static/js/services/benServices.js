@@ -7,7 +7,7 @@ angular.module('benJResources', ['ngResource']).
 		});
 	}).
 	factory('MessageService', function ($resource) {
-		return $resource('/', {}, {
-			'create': {method:'PUT', isArray: false, url: '/addMessage' }
+		return $resource('/addMessage', {}, {
+			'create': {method:'PUT'}
 		});
 	});

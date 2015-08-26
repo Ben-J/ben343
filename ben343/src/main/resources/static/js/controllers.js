@@ -5,8 +5,8 @@
 var benJControllers = angular.module('benJControllers', []);
 
 benJControllers.controller('HomeCtrl', ['$scope', '$log', '$state', '$location', 'anchorSmoothScroll', '$q',
-                                        '$filter', 'UserService', 'MessageService',
-    function($scope, $log, $state, $location, anchorSmoothScroll, $q, $filter, UserService, MessageService) {
+                                        '$filter', 'UserService', 'MessageService', 'ngDialog',
+    function($scope, $log, $state, $location, anchorSmoothScroll, $q, $filter, UserService, MessageService, ngDialog) {
 		var init = $q.defer();
 		/* MENU ->*/
 		$scope.menu = 
@@ -413,10 +413,11 @@ benJControllers.controller('HomeCtrl', ['$scope', '$log', '$state', '$location',
 		/* CONTACT ->*/
 		$scope.message = {name:'', email:'', content:''};
 		$scope.sendEmail = function() {
-			$scope.message.date = new Date();
-			console.log("not already handled : ", $scope.message);
+			console.log("message : ", $scope.message);
 			MessageService.create({}, $scope.message, function(success) {
 				$scope.message = {name:'', email:'', content:''};
+				ngDialog.open({ template: 'views/templates/messageDialog.html' });
+				$scope.goToAnchor('contact');
 			});
 		};
 		
