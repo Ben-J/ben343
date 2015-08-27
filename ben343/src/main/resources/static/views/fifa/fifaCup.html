@@ -2,35 +2,36 @@
 	<div class="col-xs-5 add-player-css margin-bottom10">
 		<form class="form-inline">
 			<div class="form-group">
-				<label class="color-white" for="exampleInputName2">Nom du nouveau joueur</label> 
+				<label class="color-white" for="exampleInputName2">Ajouter un joueur</label> 
 				<input type="text" class="form-control" id="exampleInputName2" placeholder="Messi" ng-model="newPlayer">
 			</div>
 			<button type="submit" class="btn btn-default" ng-click="addPlayer()">Ajouter</button>
 		</form>
 	</div>
-	<div class="col-xs-7 margin-top15 margin-bottom5" ng-if="players.length > 1">
+	<div class="col-xs-7 margin-top15 margin-bottom5">
 		<div class="panel panel-default col-xs-12 fond-pelouse">
 			<div class="col-xs-12 text-center margin-top10 margin-bottom10">
 				<ui-select class="col-xs-4" ng-model="newScore.j1" theme="bootstrap" reset-search-input="false">
-					<ui-select-match placeholder="{{playerPlaceholder}} 1">
+					<ui-select-match placeholder="{{playerPlaceholder}} 1" allow-clear="true">
 						{{$select.selected.nom}}
 						<div ng-if="!$select.selected.nom">{{playerPlaceholder + ' 1'}}</div>
 					</ui-select-match>
-					<ui-select-choices repeat="p in players">{{p.nom}}</ui-select-choices>
+					<ui-select-choices repeat="p in playersCandidates1">{{p.nom}}</ui-select-choices>
 				</ui-select>
 				<ui-select class="col-xs-4" ng-model="newScore.j2" theme="bootstrap" reset-search-input="false">
-					<ui-select-match placeholder="{{playerPlaceholder}} 2">
+					<ui-select-match placeholder="{{playerPlaceholder}} 2" allow-clear="true">
 						{{$select.selected.nom}}
 						<div ng-if="!$select.selected.nom">{{playerPlaceholder + ' 2'}}</div>
 					</ui-select-match>
-					<ui-select-choices repeat="p in players">{{p.nom}}</ui-select-choices>
+					<ui-select-choices repeat="p in playersCandidates2">{{p.nom}}</ui-select-choices>
 				</ui-select>
-				<label for="exampleInputName2">Score</label> 
+				<label>Score</label> 
 				<input type="number" class="form-control width-10percent display-inline-block" ng-model="newScore.butJ1">
-				-<input type="number" class="form-control width-10percent display-inline-block" ng-model="newScore.butJ2">
+				<label>-</label> 
+				<input type="number" class="form-control width-10percent display-inline-block" ng-model="newScore.butJ2">
 			</div>
 			<div class="col-xs-12 text-right margin-top10 margin-bottom10">		
-				<button type="submit" class="btn btn-primary col-xs-2" ng-click="saveScore()">Enregistrer</button>
+				<button type="submit" class="btn btn-default col-xs-2 pull-right" ng-click="saveScore()">Ajouter</button>
 			</div>
 		</div>
 	</div>
@@ -67,5 +68,8 @@
 				</tbody>
 			</table>
 		</div>
+	</div>
+	<div class="col-xs-12 color-white">
+		<div ng-repeat="s in scores">{{'(' + s.j1.nom + ' ' + s.butJ1 + ' - ' + s.butJ2 + ' ' + s.j2.nom + ')' + ' - '}}</div>
 	</div>
 </div>
