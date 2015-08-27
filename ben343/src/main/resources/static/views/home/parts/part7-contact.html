@@ -3,14 +3,15 @@
 	<h1>Contact</h1>
 	<div class="wrapper">
 		<div class="left">
-			<form>
+			<form name="messageForm">
 				<label>Nom:</label> 
-				<input type="text" placeholder="Nom" value="" class="name" ng-model="message.name">
+				<input type="text" placeholder="Nom" ng-required="true" class="name" ng-model="message.name" ng-minlength="3">
 				<label>Email:</label>
-				<input type="email" placeholder="Email" value="" class="email" ng-model="message.email">
+				<input type="email" placeholder="Email" ng-required="true" class="email" ng-model="message.email" ng-minlength="6">
 				<label>Message:</label>
-				<textarea placeholder="Message" class="message" ng-model="message.content"></textarea>
-				<input class="send work-style" type="submit" value="Envoyer" hm-tap="sendEmail()">
+				<textarea placeholder="Message" class="message" ng-required="true" ng-model="message.content" ng-minlength="20"></textarea>
+				<input class="send work-style" type="submit" ng-class="{'bg-grey': !messageForm.$valid}"
+					   value="Envoyer" hm-tap="sendEmail()" ng-disabled="!messageForm.$valid">
 			</form>
 			<div class="response"></div>
 		</div>

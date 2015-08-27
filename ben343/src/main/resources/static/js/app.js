@@ -6,7 +6,7 @@ var benApp = angular.module('benApp', [
   'angular-carousel',
   'ui.router',
   'ui.select',
-  'ngDialog',
+  'ui.bootstrap',
   'angular-inview',
   'ngSanitize',
   'ngMap',

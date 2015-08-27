@@ -5,8 +5,8 @@
 var benJControllers = angular.module('benJControllers', []);
 
 benJControllers.controller('HomeCtrl', ['$scope', '$log', '$state', '$location', 'anchorSmoothScroll', '$q',
-                                        '$filter', 'UserService', 'MessageService', 'ngDialog',
-    function($scope, $log, $state, $location, anchorSmoothScroll, $q, $filter, UserService, MessageService, ngDialog) {
+                                        '$filter', 'UserService', 'MessageService', '$modal',
+    function($scope, $log, $state, $location, anchorSmoothScroll, $q, $filter, UserService, MessageService, $modal) {
 		var init = $q.defer();
 		/* MENU ->*/
 		$scope.menu = 
@@ -411,13 +411,31 @@ benJControllers.controller('HomeCtrl', ['$scope', '$log', '$state', '$location',
 		/*<- FAQ */
 		
 		/* CONTACT ->*/
+		$scope.open = function (size) {
+		    var modalInstance = $modal.open({
+		    	animation: true,
+		    	templateUrl: 'views/templates/messageDialog.html',
+		    	controller: 'ModalInstanceCtrl',
+		    	size: size,
+		    	resolve: {
+		    		items: function () {
+		    			return 'ok';
+		    		}
+		    	}
+		    });
+		    modalInstance.result.then(function (selectedItem) {
+		    	$scope.selected = selectedItem;
+			}, function () {
+				$log.info('Modal dismissed at: ' + new Date());
+			});
+		};
+		
 		$scope.message = {name:'', email:'', content:''};
 		$scope.sendEmail = function() {
 			console.log("message : ", $scope.message);
 			MessageService.create({}, $scope.message, function(success) {
 				$scope.message = {name:'', email:'', content:''};
-				ngDialog.open({ template: 'views/templates/messageDialog.html' });
-				$scope.goToAnchor('contact');
+				$scope.open('sm');
 			});
 		};
 		

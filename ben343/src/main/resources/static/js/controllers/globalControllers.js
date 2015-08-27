@@ -12,6 +12,20 @@ benJControllers.controller('GlobalCtrl', ['$scope', '$log',
 	}
 ]);
 
+benJControllers.controller('ModalInstanceCtrl', ['$scope', '$log', '$modalInstance',
+	function($scope, $log, $modalInstance) {
+		$scope.showFooter = true;
+		
+		  $scope.ok = function () {
+			  $modalInstance.close('ok');
+		  };
+
+		  $scope.cancel = function () {
+			  $modalInstance.dismiss('cancel');
+		  };
+	  }
+]);
+
 benJControllers.controller('PrivacyCtrl', ['$scope', '$log', '$state',
   	function($scope, $log, $state) {
   		$scope.showFooter = true;
