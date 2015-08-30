@@ -9,6 +9,7 @@ var benApp = angular.module('benApp', [
   'ui.bootstrap',
   'angular-inview',
   'ngSanitize',
+  'ngStorage',
   'ngMap',
   'benJControllers',
   'benJResources',

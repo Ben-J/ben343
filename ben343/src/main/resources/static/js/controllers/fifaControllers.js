@@ -2,10 +2,31 @@
 
 var benJControllers = angular.module('FifaControllers', []);
 
-benJControllers.controller('FifaCtrl', ['$scope', '$log',
-	function($scope, $log) {
-		$scope.players = [];
+benJControllers.controller('FifaCtrl', ['$scope', '$log', '$localStorage', '$sessionStorage',
+	function($scope, $log, $localStorage, $sessionStorage) {
+		$scope.players = $localStorage.players || [];
+		$scope.scores = $localStorage.scores || [];
+
 		$scope.begin = false;
+		if ($scope.players.length > 1) {
+			$scope.begin = true;
+		}
+		
+		$scope.$watch('players', function() {
+		    $localStorage.players = $scope.players;
+		});
+		
+		$scope.$watch('scores', function() {
+		    $localStorage.scores = $scope.scores;
+		});
+		
+		$scope.cleanCup = function() {
+			 $localStorage.players = [];
+			 $scope.players = [];
+			 $localStorage.scores = [];
+			 $scope.scores = [];
+			 $scope.begin = false;
+		};
 		
 		$scope.playersCandidates1 = [];
 		$scope.playersCandidates2 = [];

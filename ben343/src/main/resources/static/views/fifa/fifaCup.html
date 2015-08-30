@@ -1,3 +1,5 @@
+<button type="submit" class="btn-remove-all-fifaCup" ng-show="begin"
+		ng-click="cleanCup()"><i class="fa fa-trash-o"></i></button>
 <div class="col-xs-12 fond-fifa slide" skrollr resize>
 	<div class="col-xs-12 add-player-css margin-bottom10" ng-show="!begin">
 		<form name="fifaForm" class="form-inline">
@@ -10,7 +12,7 @@
 			<button type="submit" ng-show="players.length > 1" class="btn btn-danger" ng-click="startGame()">Commencer</button>
 		</form>
 	</div>
-	<div class="col-xs-12 margin-top15 margin-bottom5" ng-show="begin">
+	<div class="col-xs-12 margin-top15" ng-show="begin">
 		<form name="addScoreForm" class="panel panel-default col-xs-12 fond-pelouse">
 			<div class="col-xs-12 text-center margin-top10 margin-bottom10">
 				<ui-select class="col-xs-4" ng-model="newScore.j1" theme="bootstrap" reset-search-input="false" ng-required="true">
@@ -20,7 +22,8 @@
 					</ui-select-match>
 					<ui-select-choices repeat="p in playersCandidates1">{{p.nom}}</ui-select-choices>
 				</ui-select>
-				<ui-select class="col-xs-4" ng-model="newScore.j2" theme="bootstrap" reset-search-input="false" ng-required="true">
+				<ui-select class="col-xs-4" ng-model="newScore.j2" theme="bootstrap" 
+						   reset-search-input="false" ng-required="true">
 					<ui-select-match placeholder="{{playerPlaceholder}} 2" allow-clear="true">
 						{{$select.selected.nom}}
 						<div ng-if="!$select.selected.nom">{{playerPlaceholder + ' 2'}}</div>
@@ -28,17 +31,20 @@
 					<ui-select-choices repeat="p in playersCandidates2">{{p.nom}}</ui-select-choices>
 				</ui-select>
 				<label>Score</label> 
-				<input type="number" class="form-control width-10percent display-inline-block" ng-required="true" min="0" ng-model="newScore.butJ1">
+				<input type="number" class="form-control width-10percent display-inline-block" 
+					   ng-required="true" min="0" ng-model="newScore.butJ1">
 				<label>-</label> 
-				<input type="number" class="form-control width-10percent display-inline-block" ng-required="true" min="0" ng-model="newScore.butJ2">
+				<input type="number" class="form-control width-10percent display-inline-block" 
+					   ng-required="true" min="0" ng-model="newScore.butJ2">
 			</div>
-			<div class="col-xs-12 text-right margin-top10 margin-bottom10">		
-				<button type="submit" class="btn btn-default col-xs-2 pull-right" ng-click="saveScore()" ng-disabled="!addScoreForm.$valid">Ajouter</button>
+			<div class="col-xs-12 text-right margin-top10 margin-bottom10">
+				<button type="submit" class="btn btn-default col-xs-2 pull-right" 
+						ng-click="saveScore()" ng-disabled="!addScoreForm.$valid">Ajouter</button>
 			</div>
 		</form>
 	</div>
 	<div class="col-xs-12">
-		<div class="panel panel-warning border-none">
+		<div class="panel panel-warning border-none" style="max-height: 350px;overflow: scroll;">
 			<!-- Default panel contents -->
 			<div class="panel-fifa-header">Tableau des scores</div>
 	
@@ -46,14 +52,14 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th style="width: 30;">Nom</th>
-						<th style="width: 10;">Points</th>
-						<th style="width: 10;">Gagné</th>
-						<th style="width: 10;">Perdu</th>
-						<th style="width: 10;">Nul</th>
-						<th style="width: 5;">p.</th>
-						<th style="width: 5;">c.</th>
-						<th style="width: 5;">Diff.</th>
+						<th style="width: 45%;">Nom</th>
+						<th style="width: 10%;">Points</th>
+						<th style="width: 10%;">Gagné</th>
+						<th style="width: 10%;">Perdu</th>
+						<th style="width: 10%;">Nul</th>
+						<th style="width: 5%;">p.</th>
+						<th style="width: 5%;">c.</th>
+						<th style="width: 5%;">Diff.</th>
 					</tr>
 				</thead>
 				<tbody ng-repeat="p in players | orderBy: ['-points','-butsMoyenne']">
@@ -71,7 +77,7 @@
 			</table>
 		</div>
 	</div>
-	<div class="col-xs-12">
+	<div class="fifa-cup-results">
 		<div class="col-xs-6 col-sm-3" ng-repeat="s in scores">
 			<div class="col-xs-12 fifaCup-score" ng-class="{'bg-color-white': !s.update, 'bg-color-green': s.update}">
 				<div class="text-overEllipsis" ng-class="{'col-xs-5': !s.update, 'col-xs-4': s.update}">{{s.j1.nom}}</div>

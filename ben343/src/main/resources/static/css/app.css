@@ -2297,3 +2297,23 @@ body.noAnimation #header {
     color: white;
     padding: 10px;
 }
+
+.fifa-cup-results {
+	position: relative;
+    float: left;
+    width: 100%;
+    height: 90px;
+    overflow: overlay;
+}
+
+.btn-remove-all-fifaCup {
+	position: absolute;
+    width: 2%;
+    height: 4%;
+    right: 0px;
+    z-index: 20;
+    opacity: 0.4;
+    background-color: red;
+    color: white;
+    border: none;
+}
