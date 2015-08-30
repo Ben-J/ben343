@@ -40,6 +40,7 @@
 .margin-topm60 { margin-top: -60px; }
 .margin-topm70 { margin-top: -70px; }
 
+.bg-color-white { background-color:white; }
 .bg-color-blue-ben { background-color:rgb(40, 62, 103); }
 .bg-color-darkblue { background-color:#337AB7; }
 .bg-color-yellow { background-color:#C6D94F; }
@@ -58,6 +59,7 @@
 .color-orange { color: rgb(255, 87, 0); }
 .color-grey { color: #969696; }
 
+.border-none { border:none; }
 
 .bg-grey { background:#B3BFC2 !important; }
 
@@ -2276,4 +2278,22 @@ body.noAnimation #header {
 
 .add-player-css {
 	margin: 50px 0px 50px 0px;
+}
+
+.fifaCup-score {
+    color: black;
+    text-align: center;
+    margin: 5px 5px 5px 5px;
+    padding: 10px 0px 10px 0px;
+}
+
+.text-overEllipsis {
+	overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.panel-fifa-header {
+    background-color: #A5271D;
+    color: white;
+    padding: 10px;
 }

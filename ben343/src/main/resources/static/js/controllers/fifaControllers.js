@@ -5,7 +5,7 @@ var benJControllers = angular.module('FifaControllers', []);
 benJControllers.controller('FifaCtrl', ['$scope', '$log',
 	function($scope, $log) {
 		$scope.players = [];
-		$scope.scores = [];
+		$scope.begin = false;
 		
 		$scope.playersCandidates1 = [];
 		$scope.playersCandidates2 = [];
@@ -46,29 +46,39 @@ benJControllers.controller('FifaCtrl', ['$scope', '$log',
 				if (angular.equals($scope.newScore.j1.nom, row.nom)) {
 					row.butsMarques += $scope.newScore.butJ1;
 					row.butsEncaisses += $scope.newScore.butJ2;
-					row.butsMoyenne += row.butsMarques - row.butsEncaisses;
+					row.butsMoyenne += ($scope.newScore.butJ1 - $scope.newScore.butJ2);
 					if ($scope.newScore.butJ1 > $scope.newScore.butJ2) {
 						row.gagne++;
 						row.points +=3;
 					} else if ($scope.newScore.butJ1 < $scope.newScore.butJ2) {
 						row.perdu++;
-						row.points +=1;
-					} else { row.nul++; }
+					} else { 
+						row.nul++;
+						row.points ++;
+					}
 				}
 				if (angular.equals($scope.newScore.j2.nom, row.nom)) {
 					row.butsMarques += $scope.newScore.butJ2;
 					row.butsEncaisses += $scope.newScore.butJ1;
-					row.butsMoyenne += row.butsMarques - row.butsEncaisses;
+					row.butsMoyenne += ($scope.newScore.butJ2 - $scope.newScore.butJ1);
 					if ($scope.newScore.butJ2 > $scope.newScore.butJ1) {
 						row.gagne++;
 						row.points +=3;
 					} else if ($scope.newScore.butJ2 < $scope.newScore.butJ1) {
 						row.perdu++;
-						row.points +=1;
-					} else { row.nul++; }
+					} else {
+						row.nul++;
+						row.points ++;
+					}
 				}
 			});
-			$scope.scores.push($scope.newScore);
+			angular.forEach($scope.scores, function(row) {
+				if(angular.equals(row.j1.nom, $scope.newScore.j1.nom) && angular.equals(row.j2.nom, $scope.newScore.j2.nom)) {
+					row.butJ1 = $scope.newScore.butJ1;
+					row.butJ2 = $scope.newScore.butJ2;
+					row.update = true;
+				}
+			});
 			$scope.newScore = {j1:{}, j2:{}, butJ1:0, butJ2:0};
 		};
 		
@@ -99,5 +109,17 @@ benJControllers.controller('FifaCtrl', ['$scope', '$log',
 				$scope.playersCandidates2.push(oldVal);
 			}
 		});
+		
+		$scope.startGame = function() {
+			$scope.begin = true;
+			$scope.scores = [];
+			angular.forEach($scope.players, function(j1) {
+				angular.forEach($scope.players, function(j2) {
+					if (!angular.equals(j1.nom, j2.nom)) {
+						$scope.scores.push({j1:j1, j2:j2, butJ1:0, butJ2:0, update: false});
+					}
+				});
+			});
+		};
   	}
 ]);
