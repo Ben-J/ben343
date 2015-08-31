@@ -335,7 +335,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$log', '$state', '$location',
 				 [
 				  {
 					  title: "Quelles technologies sont utilisées pour ben343.fr ?",
-					  text: "Ce site web (~application web) a été développé à l'aide de : maven, git, spring (spring-boot-starter- : data-jpa / jdbc / security / web / tomcat), angularJS, mySQL, etc. De nombreuses librairies JS : font-awesome, hammerjs, skrollr, etc. Ce site est hébergé sur un serveur Debian. "
+					  text: "Ce site web (~application web) a été développé à l'aide de : maven, git, spring (spring-boot-starter- : data-jpa / jdbc / security / web / tomcat), angularJS, mySQL, etc. De nombreuses librairies JS : font-awesome, hammerjs, skrollr, etc. Ce site est hébergé sur un serveur dédié Debian. "
 				  },
 				  {
 					  title: "Quel est ton prénom ?",
@@ -347,7 +347,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$log', '$state', '$location',
 				  },
 				  {
 					  title: "Quel développeur es-tu ?",
-					  text: "Au cours de ma jeune carrière, j'ai pû concevoir et développer de nombreux logiciels : des sites web, des applications web, des applications mobile, des applications bureautique, des jeux, etc. Je ne me restreins à aucun langage ou à aucune technologie même si j'ai quand même une petite préférence pour la conception et le développement de composants/logiciels critriques JAVA. Le genre de projet pour lesquels les maths et les algos sont primordiaux."
+					  text: "Au cours de ma jeune carrière j'ai pû concevoir et développer de nombreux logiciels : des sites web, des applications web, des applications mobile, des applications bureautique, des jeux, etc. Je n'ai aucune barrière de langages et de technologies mais la conception de composants critriques JAVA m'intéresse davantage."
 				  },
 				  {
 					  title: "Es-tu un geek ?",
