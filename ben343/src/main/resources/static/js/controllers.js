@@ -21,11 +21,6 @@ benJControllers.controller('HomeCtrl', ['$scope', '$log', '$state', '$location',
 		$scope.isInit = false;
 		$scope.goToAnchor = function(value) {
 			if($scope.isInit === true) {
-				// set the location.hash to the id of
-				// the element you wish to scroll to.
-//				$location.hash(value);
-				
-				// call $anchorScroll()
 				anchorSmoothScroll.scrollTo(value);
 			} 
 		};
@@ -127,7 +122,9 @@ benJControllers.controller('HomeCtrl', ['$scope', '$log', '$state', '$location',
 			label: 'Université', 
 			active: false, 
 			textcss: 'goRight',
-			url: 'projects',
+			url: function() {
+				$state.go('projects', {}, {reload: true});
+	    	},
 			urlText: 'Voir quelques projets Universitaire...',
 			text: 'Obtention d\'une licence en Informatique Fondamentale (Universite Paul Sabatier TOULOUSE III) et un master en informatique Développement Logiciel (toujours à l\’UPS de Toulouse).'
 		},
@@ -136,7 +133,9 @@ benJControllers.controller('HomeCtrl', ['$scope', '$log', '$state', '$location',
 			label: 'Orange S.A.', 
 			active: false, 
 			textcss: 'goRight',
-			url: 'experience_pro',
+			url: function() {
+				$state.go('experience_pro', {}, {reload: true});
+	    	},
 			urlText: 'en savoir plus...',
 			text: 'Stage Développeur-Concepteur. Réalisation d’une application Web à destination des ressources humaines pour aider à la gestion des horaires des employés. Unique développeur...'},
 		 {
@@ -144,7 +143,9 @@ benJControllers.controller('HomeCtrl', ['$scope', '$log', '$state', '$location',
 			label: 'Thales Group', 
 			active: false, 
 			textcss: 'goRight',
-			url: 'experience_pro',
+			url: function() {
+				$state.go('experience_pro', {}, {reload: true});
+	    	},
 			urlText: 'en savoir plus...',
 			text: 'Apprentissage Ingénieur Développement Logiciel. Réalisation d\'un composant logiciel JAVA pour l’interopérabilité du nouveau système de gestion et de contrôle du trafic aérien européen 4FLIGHT.'
 		 },
@@ -153,7 +154,9 @@ benJControllers.controller('HomeCtrl', ['$scope', '$log', '$state', '$location',
 			 label: 'Apside', 
 			 active: false, 
 			 textcss: 'goRight',
-			 url: 'experience_pro',
+			 url: function() {
+				$state.go('experience_pro', {}, {reload: true});
+			 },
 				urlText: 'en savoir plus...',
 			 text: 'Ingénieur d\'études – Conception et Développement Logiciel. En assitance technique pendant 2 ans chez Air France. J\'ai eu la chance de développer trois applications web...'},
 		 {

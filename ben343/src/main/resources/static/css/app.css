@@ -366,6 +366,7 @@ body.noAnimation #header {
 	background: #FFF;
 	padding: 0 50px 0;
 	font-size: 7.34vw;
+    min-height: 50vw;
 }
 
 #services h1 {
@@ -469,6 +470,8 @@ body.noAnimation #header {
 #founders {
 	position: relative;
 	background: #313132;
+	height: 100vh !important;
+    min-height: 50vw;
 }
 
 #founders video {
@@ -480,6 +483,12 @@ body.noAnimation #header {
 	padding: 35px;
 	text-align: center;
 	font-size: Helvetica;
+}
+@media (max-width: 899px) and (min-width: 500px) {
+	#founders .description {
+		margin-top: -80px;
+    	margin-bottom: -50px;
+	}
 }
 
 #founders h1 {
@@ -503,6 +512,7 @@ body.noAnimation #header {
 #work {
 	background: #EBE8EB;
 	font-size: 1vw;
+    min-height: 55vw;
 }
 
 #work h1 {
@@ -723,10 +733,11 @@ body.noAnimation #header {
 /* PROCESS */
 #process {
 	font-size: 9vw;
+    min-height: 50vw;
 }
 
 #process img.process-img {
-	width: 100%;
+	width: 120%;
 	vertical-align: -webkit-baseline-middle;
 }
 
@@ -904,6 +915,8 @@ body.noAnimation #header {
 /* FAQs */
 #faq {
 	background: #FFF;
+	height: 100vh !important;
+    min-height: 55vw;
 }
 
 #faq h1 {
@@ -1075,6 +1088,7 @@ body.noAnimation #header {
 #contact {
 	background: #010101;
 	font-size: 7.34vw;
+    min-height: 70vw;
 }
 
 #contact h1 {
@@ -1221,7 +1235,7 @@ body.noAnimation #header {
 #footer .wrapper .column1, #footer .wrapper .column2 {
 	display: inline-block;
 	vertical-align: top;
-	width: 270px;
+	width: 25%;
 	height: 195px;
 }
 
@@ -1287,6 +1301,28 @@ body.noAnimation #header {
 #footer p.copyright a {
 	color: #707174;
 	text-decoration: none;
+}
+
+@media all and (min-width: 899px) {
+	#services {
+		height: 100vh !important;
+	}
+	
+	#process {
+    	height: 100vh !important;
+	}
+	
+	#contact {
+		height: 100vh !important;
+	}
+	
+	#work {
+    	height: 100vh !important;
+	}
+	
+	#work {
+    	height: 100vh !important;
+	}
 }
 
 /* MOBILE */
@@ -1946,6 +1982,7 @@ body.noAnimation #header {
 	}
 	#process h1 {
 		margin: 9vw 0 6vw;
+	    color: white !important;
 	}
 	#process .timeline-wrapper {
 		width: 100%;
@@ -2251,7 +2288,6 @@ body.noAnimation #header {
 }
 .pie-column{
 	text-align:center;
-	margin-bottom: 25px;
 }
 .pie-content h2{
 	margin-bottom: 0;

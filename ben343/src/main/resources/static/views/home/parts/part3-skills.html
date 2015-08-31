@@ -1,12 +1,14 @@
-<div in-view-container name="founders" id="founders" class="slide color-white bg-color-founder" style="min-height: 650px;" skrollr>
+<div in-view-container name="founders" id="founders" class="slide color-white bg-color-founder" 
+	 ng-style="{'min-height': (windowWidth < 768) ? '750px' : '0px'}" resize skrollr>
 	<div in-view="$inview&&setActiveMenu('founders')"></div>
 	<h1>{{menu[1].title}}</h1>
-	<div class="description col-md-12">
+	<div class="description col-md-12 web-only">
 		<h5>{{chartsIntro}}<a ui-sref='skills'>cliquer ici</a>.</h5>
 	</div>
 	<div class="clearfix"></div>
-	<div class="pie-wrapper color-white" style="margin: 50px 0 10px;">
-		<div class="pie-column col-md-3" ng-repeat="ch in charts">
+	<div class="pie-wrapper color-white" style="margin-left:0px;margin-bottom:10px;margin-right:0px;"
+		 ng-style="{'margin-top': (windowWidth < 768) ? '20px' : '50px'}">
+		<div class="pie-column col-xs-6 col-sm-3 col-md-3" ng-repeat="ch in charts">
 			<span class="percent-chart">{{ch.value}}</span>
 			<canvas
 				options="{animationEasing:'easeOutBounce', animationSteps:'100', segmentStrokeColor:'#313132', segmentStrokeWidth : '0', percentageInnerCutout : '85'}"

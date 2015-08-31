@@ -1,4 +1,4 @@
-<div in-view-container skrollr id="process" class="slide">
+<div in-view-container id="process" class="slide" skrollr>
 	<div in-view="$inview&&setActiveMenu('process')"></div>
 	<img class="process-img web-only" src="img/web_site_img/mountain.jpg">
 	<img class="process-img mobile-only" src="img/web_site_img/mountain_mobile.jpg">
@@ -79,7 +79,7 @@
 
 		<div ng-repeat="c in career" class="explanation" ng-class="c.textcss">
 			{{c.text}}
-			<br><a ng-if="c.url != ''" ui-sref="{{c.url}}">{{c.urlText}}</a>
+			<br><a ng-if="c.url != ''" ng-click="c.url()" style="cursor:pointer;">{{c.urlText}}</a>
 		</div>
 	</div>
 </div>
