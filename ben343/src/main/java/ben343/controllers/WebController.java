@@ -11,4 +11,10 @@ public class WebController {
         System.out.println("Home Page");
         return "/index.html";
     }
+    
+    @RequestMapping(value="/login")
+    public String login(){
+        System.out.println("Login Page");
+        return "/loginPage.html";
+    }
 }
