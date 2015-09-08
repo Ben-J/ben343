@@ -9,6 +9,11 @@ var benApp = angular.module('benApp', [
   'ui.bootstrap',
   'angular-inview',
   'ngSanitize',
+  'com.2fdevs.videogular',
+  'com.2fdevs.videogular.plugins.controls',
+  'com.2fdevs.videogular.plugins.overlayplay',
+  'com.2fdevs.videogular.plugins.poster',
+  'info.vietnamcode.nampnq.videogular.plugins.youtube',
   'ngStorage',
   'ngMap',
   'benJControllers',
@@ -71,6 +76,11 @@ benApp.config(['$stateProvider', '$urlRouterProvider',
 		url: '/fifaCup',
 		templateUrl: 'views/fifa/fifaCup.html',
 		controller: 'FifaCtrl'
+	})
+	.state('parachute', {
+		url: '/parachute',
+		templateUrl: 'views/resume/sautParachute.html',
+		controller: 'HobbiesCtrl'
 	})
 	.state('error', {
 		url: '/error',

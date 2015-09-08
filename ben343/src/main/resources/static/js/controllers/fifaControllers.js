@@ -144,3 +144,20 @@ benJControllers.controller('FifaCtrl', ['$scope', '$log', '$localStorage', '$ses
 		};
   	}
 ]);
+
+benJControllers.controller('HobbiesCtrl', ['$scope', '$sce', '$state', function($scope, $sce, $state) {
+	$scope.config = {
+		sources: [
+			{src: $sce.trustAsResourceUrl("https://youtu.be/ZAYgoNIE-dw"), type: "video/m2t"}
+		],
+		theme: "bower_components/videogular-themes-default/videogular.css",
+		plugins: {
+			poster: "img/sautParachute.jpg"
+		}
+	};
+	
+	$scope.goToAccueil = function() {
+		$state.go("loisirs", {}, {reload: true});
+	};
+  }
+]);

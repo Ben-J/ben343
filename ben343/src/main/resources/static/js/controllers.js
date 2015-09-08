@@ -511,22 +511,22 @@ benJControllers.controller('CarouselCtrl', ['$scope', '$log', '$state',
 	    	title: 'Albi',
 	    	src:'img/moto-albi.jpg', 
 	    	date: 'balade mai 2015',
-		    text: 'Les balades en moto avec ma Honda Hornet'
+		    text: 'Les balades en moto avec ma Honda Hornet',
 	    },
 	    {
 	    	active: false,
 	    	title: 'Concert Shaka Ponk',
 	    	src:'img/shaka.JPG', 
 	    	date: 'début 2015',
-	    	text: 'La musique est pour moi essentiel. J’ai suivi pendant 5 ans des cours de piano.'
+	    	text: 'La musique est pour moi essentiel. J’ai suivi pendant 5 ans des cours de piano.',
 	    },
 	    {
 	    	active: false,
-	    	title: 'FIFA Ultimate Team',
-	    	src:'img/fifa.png', 
-	    	date: '2015',
-	    	text: 'J\'aime beaucoup les jeux vidéos. FIFA étant un jeu que j\'affectionne particulièrement.',
-	    	backdoor: true
+	    	title: 'Saut en parachute',
+	    	src:'img/sautParachute.JPG', 
+	    	date: '29 aôut 2015',
+	    	text: 'Voir la vidéo !!!',
+		    backdoor: true
 	    }
     ];
 	

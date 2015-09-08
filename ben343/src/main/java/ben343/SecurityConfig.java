@@ -52,6 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .and().csrf().disable() // Disable CSRF
 	    .formLogin()
 	    	.loginPage("/login").permitAll()
+            .failureUrl("/#/fifaCup")
 	    .successHandler(successHandler())
         .and()
         	.httpBasic();
