@@ -523,7 +523,7 @@ benJControllers.controller('CarouselCtrl', ['$scope', '$log', '$state',
 	    {
 	    	active: false,
 	    	title: 'Saut en parachute',
-	    	src:'img/sautParachute.JPG', 
+	    	src:'img/sautParachute.jpg', 
 	    	date: '29 aôut 2015',
 	    	text: 'Voir la vidéo !!!',
 		    backdoor: true
