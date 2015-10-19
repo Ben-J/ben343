@@ -20,6 +20,7 @@ var benApp = angular.module('benApp', [
   'benJResources',
   'GlobalControllers',
   'ProjectControllers',
+  'MessageControllers',
   'FifaControllers',
   'SkillControllers',
   'benJDirectives',
@@ -81,6 +82,11 @@ benApp.config(['$stateProvider', '$urlRouterProvider',
 		url: '/parachute',
 		templateUrl: 'views/resume/sautParachute.html',
 		controller: 'HobbiesCtrl'
+	})
+	.state('admin', {
+		url: '/admin',
+		templateUrl: 'views/admin/message.html',
+		controller: 'MessageCtrl'
 	})
 	.state('error', {
 		url: '/error',

@@ -63,29 +63,19 @@
 
 .bg-grey { background:#B3BFC2 !important; }
 
-.position-absolute {
-	position: absolute;
-}
+.position-absolute { position: absolute; }
 
-.display-inline-block {
-	display: inline-block;
-}
+.display-inline-block { display: inline-block; }
 
-.right4percent {
-	right: 4%;
-}
+.right4percent { right: 4%; }
 
-.font-size1.1vw {
-	font-size: 1.1vw;
-}
+.font-size1.1vw { font-size: 1.1vw; }
 
-.topm1 {
-	top: -1px;
-}
+.topm1 { top: -1px; }
 
-.list-group-item {
-  padding: 5px 15px;
-}
+.list-group-item { padding: 5px 15px; }
+
+.overflow-scroll { overflow: scroll; }
 
 .float-left {
 	position: relative;
@@ -97,13 +87,9 @@
   border-radius: 0px;
 }
 
-.panel-heading {	
-  	border-radius: 0px;
-}
+.panel-heading { border-radius: 0px; }
 
-.cursor-pointer {
-	cursor: pointer;
-}
+.cursor-pointer { cursor: pointer; }
 
 .min-height52 { min-height: 52px; }
 .min-height100 { min-height: 100px; }

@@ -264,7 +264,7 @@ benJControllers.controller('SkillCtrl', ['$scope', '$log', '$state',
 		$scope.angularTools = 
 			[
 			 {
-				 title: 'npm, bower, gulp, etc.',
+				 title: 'npm, bower, gulp',
 				 type: 'techno',
 				 stars: '3'
 			 }

@@ -49,6 +49,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers("/views/privacy/privacy.html").permitAll()
         .antMatchers("/views/error.html").permitAll()
         .antMatchers("/views/fifa/fifaCup.html").authenticated()
+        .antMatchers("/views/admin/message.html").authenticated()
         .and().csrf().disable() // Disable CSRF
 	    .formLogin()
 	    	.loginPage("/login").permitAll()

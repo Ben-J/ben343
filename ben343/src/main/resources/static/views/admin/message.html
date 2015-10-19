@@ -1,0 +1,31 @@
+<div class="col-xs-12 slide bg-color-blue-ben" style="height:100%;">
+		<div class="col-xs-12 text-center slide color-white margin-top20" ng-if="messages.length == 0">Il n'y a aucun message</div>
+		<div class="panel panel-warning margin-top20" ng-if="messages" style="overflow: scroll;">
+			<!-- Default panel contents -->
+			<div class="panel-fifa-header">{{messages.length}} message(s)</div>
+	
+			<!-- Table -->
+			<table class="table">
+				<thead>
+					<tr>
+						<th style="width: 2%;">Id</th>
+						<th style="width: 10%;">Nom</th>
+						<th style="width: 10%;">Email</th>
+						<th style="width: 65%;">Description</th>
+						<th style="width: 10%;">Date</th>
+						<th style="width: 3%;"></th>
+					</tr>
+				</thead>
+				<tbody ng-repeat="p in messages | orderBy: 'date'">
+					<tr>
+						<td>{{p.id}}</td>
+						<td>{{p.name}}</td>
+						<td>{{p.email}}</td>
+						<td>{{p.content}}</td>
+						<td>{{getDate(p.date)}}</td>
+<!-- 						<td><button class="btn btn-default" ng-click="deleteMsg(p.id)">X</button></td> -->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>

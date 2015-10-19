@@ -212,18 +212,18 @@ benJControllers.controller('HomeCtrl', ['$scope', '$log', '$state', '$location',
 		$scope.charts = 
 			[
 			 {
-				 value: 85,
+				 value: 70,
 				 title: 'AngularJs',
 				 labels: ["AngularJs", ""],
 				 colours: ["#3498DB", "#313132"],
-				 data: [85, 15]
+				 data: [70, 30]
 			 },
 			 {
-				 value: 90,
+				 value: 75,
 				 title: 'Java',
 				 labels: ["Java", ""],
 				 colours: ["#FFC600", "#313132"],
-				 data: [90, 10]
+				 data: [75, 25]
 			 },
 			 {
 				 value: 70,
@@ -233,11 +233,11 @@ benJControllers.controller('HomeCtrl', ['$scope', '$log', '$state', '$location',
 				 data: [70, 30]
 			 },
 			 {
-				 value: 95,
+				 value: 85,
 				 title: 'Méthodes Agiles',
 				 labels: ["Méthodes Agiles", ""],
 				 colours: ["#13B0CB", "#313132"],
-				 data: [95, 5]
+				 data: [85, 15]
 			 }];
 		
 		/*<- DIVERS */

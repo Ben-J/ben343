@@ -9,7 +9,7 @@
 				<label>Email:</label>
 				<input type="email" placeholder="Email" ng-required="true" class="email" ng-model="message.email" ng-minlength="6">
 				<label>Message:</label>
-				<textarea placeholder="Message" class="message" ng-required="true" ng-model="message.content" ng-minlength="20"></textarea>
+				<textarea placeholder="Message" class="message" ng-required="true" ng-model="message.content" ng-minlength="20" ng-maxlength="250"></textarea>
 				<input class="send work-style" type="submit" ng-class="{'bg-grey': !messageForm.$valid}"
 					   value="Envoyer" hm-tap="sendEmail()" ng-disabled="!messageForm.$valid">
 			</form>
