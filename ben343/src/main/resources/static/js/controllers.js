@@ -351,7 +351,7 @@ benJControllers.controller('HomeCtrl', ['$scope', '$log', '$state', '$location',
 				  },
 				  {
 					  title: "Es-tu un geek ?",
-					  text: "Geek ? Oui je le suis un peu... forcement. J'aime les jeux vidéos et les jeux de réflexions. Mais au-delà de ça je joue parce que j’y trouve un intérêt, ce n’est pas seulement pour le plaisir de jouer. J'aime à dire que le cerveau est un muscle et jouer c'est le soumettre à un stimuli pour éviter qu'il s’atrophie. Par le jeu j'entraîne donc ma mémoire, mes réflexes et ma vigilance. (Dernier jeu joué : The Witcher 3 - PS4)"
+					  text: "Geek ? Oui je le suis un peu... forcement. J'aime les jeux vidéos et les jeux de réflexions. Mais au-delà de ça je joue parce que j’y trouve un intérêt, ce n’est pas seulement pour le plaisir de jouer. J'aime à dire que le cerveau est un muscle et jouer c'est le soumettre à un stimuli pour éviter qu'il s’atrophie. Par le jeu j'entraîne donc ma mémoire, mes réflexes et ma vigilance. (Dernier jeu joué : Destiny - PS4)"
 				  }
 				 ]
 		 },
