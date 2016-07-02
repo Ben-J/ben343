@@ -11,20 +11,18 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 public class IndexController implements ErrorController {
 
-	private static final String PATH = "/error";
-
-	@RequestMapping(value = PATH)
+	@RequestMapping(value = "error")
 	public String error() {
-		return "Mec t'as fait une reqûete qui mène null part !!!";
+		return "Mec t'as fait une requête qui mène null part !!!";
 	}
 
 	@Override
 	public String getErrorPath() {
-		return PATH;
+		return "error";
 	}
 	
 	// for 403 access denied page
-	@RequestMapping(value = "/403", method = RequestMethod.GET)
+	@RequestMapping(value = "403", method = RequestMethod.GET)
 	public ModelAndView accesssDenied(Principal user) {
 
 		ModelAndView model = new ModelAndView();

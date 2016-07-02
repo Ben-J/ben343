@@ -91,6 +91,7 @@ public class MessageAppController {
 	}
 
 	@RequestMapping("messages")
+	@ResponseBody
 	public List<MessageApp> findAll() {
 		return (List<MessageApp>) messageAppRepo.findAll();
 	}
