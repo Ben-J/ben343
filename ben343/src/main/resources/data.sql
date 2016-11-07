@@ -1,1 +1,0 @@
-insert into userapp(email, name) values("Brion", "bjm.brion@gmail.com");
